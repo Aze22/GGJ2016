@@ -93,4 +93,6 @@ SpaceRun.apk
 Assets/StreamingAssets/build_info.txt
 *.sln
 *.csproj
+ProjectSettings/ProjectVersion.txt
+ProjectSettings/ProjectSettings.asset
 ProjectSettings/EditorBuildSettings.asset
