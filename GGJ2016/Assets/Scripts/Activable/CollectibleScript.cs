@@ -14,6 +14,11 @@ public class CollectibleScript : MonoBehaviour
 
     public bool destroyOnPickup = true;
 
+    public virtual void Start()
+    {
+
+    }
+
     // Function called when the player enters this collectible's trigger - Handles pickup. It is overriden by child classes for specific behaviors.
 	public virtual void Pickup()
     {
