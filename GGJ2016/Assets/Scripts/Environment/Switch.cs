@@ -46,47 +46,49 @@ public class Switch : MonoBehaviour
 	// This function should update the switch asset to an appropriate state (e.g. change graphic)
 	public bool SetState(bool state) {
 		bool success = false;
-		Debug.Log("Setting switch state to " + state);
+		Debug.Log("Setting switch " + m_index + " state to " + state);
 
 		// Modify this code to toggle the different states, based on the final switch assets
 		if (state) {
 			// Only activate the switch if it has no previous switch, or the previous switch is active
 			if ((m_previousSwitch == null) || (gameStateManager.GetSwitchState(m_previousSwitch.GetIndex()))) {
 				Debug.Log("Previous switch: " + m_previousSwitch);
+				m_state1Mesh.gameObject.SetActive(false);
+            	m_state2Mesh.gameObject.SetActive(true);
 				success = true;
 			} else if ((m_previousSwitch) && (m_resetChain)) {
 				// Reset the chain
 				ResetChain();
 				success = false;
 			}
-
-            m_state1Mesh.gameObject.SetActive(false);
-            m_state2Mesh.gameObject.SetActive(true);
-
         } else {
 			// Only deactivate the switch if it is not a trigger, or we are resetting a chain
 			if (!m_isTrigger) {
+				m_state1Mesh.gameObject.SetActive(true);
+            	m_state2Mesh.gameObject.SetActive(false);
                 success = true;
 			}
 
 			if ((m_previousSwitch) && (m_resetChain)) {
+				m_state1Mesh.gameObject.SetActive(true);
+            	m_state2Mesh.gameObject.SetActive(false);
 				success = true;
 				ResetChain();
 			}
-
-            m_state1Mesh.gameObject.SetActive(true);
-            m_state2Mesh.gameObject.SetActive(false);
-        }
-
-        for (int i = 0; i < objectsToActivate.Length; i++)
-        {
-            if (objectsToActivate[i] != null)
-            {
-                objectsToActivate[i].SendMessage("Activate", SendMessageOptions.DontRequireReceiver);
-            }
         }
 
 		Debug.Log("Success: " + success);
+
+		if (success) {
+        	for (int i = 0; i < objectsToActivate.Length; i++)
+        	{
+				if (objectsToActivate[i] != null)
+				{
+					objectsToActivate[i].SendMessage("Activate", SendMessageOptions.DontRequireReceiver);
+				}
+			}
+		}
+
 		return success;
 	}
 

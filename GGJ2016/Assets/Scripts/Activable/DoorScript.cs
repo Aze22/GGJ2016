@@ -70,10 +70,11 @@ public class DoorScript : MonoBehaviour
     {
         if (m_open)
         {
-            m_animation["DoorOpen"].speed = -1;
+			m_animation["DoorOpen"].speed = -1;
 
-            if(!m_animation.isPlaying)
+			if (!m_animation.isPlaying) {
                 m_animation["DoorOpen"].time = m_animation["DoorOpen"].length;
+			}
 
             m_animation.Play("DoorOpen");
             m_open = false;
@@ -87,9 +88,10 @@ public class DoorScript : MonoBehaviour
 
     public void Activate()
     {
-        if (keyCardRequired == GameStateManager.KeyCards.None && m_locked)
+        if (keyCardRequired == GameStateManager.KeyCards.None && m_locked) {
             UnLock();
-        else
+        } else {
             Lock();
+		}
     }
 }

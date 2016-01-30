@@ -22,7 +22,7 @@ public class StatusText : MonoBehaviour {
 		m_fadeTimeLeft -= Time.deltaTime;
 
 		if (m_fadeTimeLeft < 0f) {
-			//m_text.text = "";
+			m_text.text = "";
 		} else {
 			m_canvasRenderer.SetAlpha(1f * (1 - ((FADE_DURATION - m_fadeTimeLeft) / FADE_DURATION)));
 		}
