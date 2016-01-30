@@ -1,0 +1,667 @@
+fileFormatVersion: 2
+guid: 9a8bf0e67105c5f4db81212150b58bbc
+timeCreated: 1454123136
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Object 12 Copy
+    100004: Object 13
+    100006: Object 13 Copy
+    100008: Object 13 Copy 2
+    100010: Object 13 Copy 3
+    100012: Object 2 Copy 10
+    100014: Object 2 Copy 11
+    100016: Object 2 Copy 12
+    100018: Object 2 Copy 13
+    100020: Object 2 Copy 14
+    100022: Object 2 Copy 15
+    100024: Object 2 Copy 16
+    100026: Object 2 Copy 17
+    100028: Object 2 Copy 18
+    100030: Object 2 Copy 19
+    100032: Object 2 Copy 20
+    100034: Object 2 Copy 21
+    100036: Object 2 Copy 22
+    100038: Object 2 Copy 23
+    100040: Object 2 Copy 4
+    100042: Object 2 Copy 5
+    100044: Object 2 Copy 6
+    100046: Object 2 Copy 7
+    100048: Object 2 Copy 8
+    100050: Object 2 Copy 9
+    100052: Object 21
+    100054: Object 21 Copy
+    100056: Object 24
+    100058: Object 24 Copy
+    100060: Object 26
+    100062: Object 26 Copy
+    100064: Object 26 Copy 2
+    100066: Object 26 Copy 3
+    100068: Object 28
+    100070: Object 28 Copy
+    100072: Object 28 Copy 2
+    100074: Object 28 Copy 3
+    100076: Object 29
+    100078: Object 3 Copy 10
+    100080: Object 3 Copy 11
+    100082: Object 3 Copy 12
+    100084: Object 3 Copy 13
+    100086: Object 3 Copy 14
+    100088: Object 3 Copy 15
+    100090: Object 3 Copy 16
+    100092: Object 3 Copy 17
+    100094: Object 3 Copy 18
+    100096: Object 3 Copy 19
+    100098: Object 3 Copy 4
+    100100: Object 3 Copy 5
+    100102: Object 3 Copy 6
+    100104: Object 3 Copy 7
+    100106: Object 3 Copy 8
+    100108: Object 3 Copy 9
+    100110: Object 30
+    100112: Object 30 Copy
+    100114: Object 32 Copy
+    100116: Object 32 Copy 2
+    100118: Object 32 Copy 3
+    100120: Object 32 Copy 4
+    100122: Object 35
+    100124: Object 35 Copy
+    100126: Object 35 Copy 2
+    100128: Object 35 Copy 3
+    100130: Object 35 Copy 4
+    100132: Object 35 Copy 5
+    100134: Object 35 Copy 6
+    100136: Object 35 Copy 7
+    100138: Object 4 Copy 10
+    100140: Object 4 Copy 11
+    100142: Object 4 Copy 12
+    100144: Object 4 Copy 13
+    100146: Object 4 Copy 14
+    100148: Object 4 Copy 15
+    100150: Object 4 Copy 16
+    100152: Object 4 Copy 17
+    100154: Object 4 Copy 18
+    100156: Object 4 Copy 19
+    100158: Object 4 Copy 4
+    100160: Object 4 Copy 5
+    100162: Object 4 Copy 6
+    100164: Object 4 Copy 7
+    100166: Object 4 Copy 8
+    100168: Object 4 Copy 9
+    100170: Object 43
+    100172: Object 43 Copy
+    100174: Object 9 Copy 10
+    100176: Object 9 Copy 11
+    100178: Object 9 Copy 12
+    100180: Object 9 Copy 13
+    100182: Object 9 Copy 14
+    100184: Object 9 Copy 15
+    100186: Object 9 Copy 16
+    100188: Object 9 Copy 17
+    100190: Object 9 Copy 18
+    100192: Object 9 Copy 19
+    100194: Object 9 Copy 20
+    100196: Object 9 Copy 21
+    100198: Object 9 Copy 22
+    100200: Object 9 Copy 23
+    100202: Object 9 Copy 24
+    100204: Object 9 Copy 25
+    100206: Object 9 Copy 26
+    100208: Object 9 Copy 27
+    100210: Object 9 Copy 28
+    100212: Object 9 Copy 29
+    100214: Object 9 Copy 30
+    100216: Object 9 Copy 31
+    100218: Object 9 Copy 32
+    100220: Object 9 Copy 33
+    100222: Object 9 Copy 34
+    100224: Object 9 Copy 35
+    100226: Object 9 Copy 36
+    100228: Object 9 Copy 37
+    100230: Object 9 Copy 38
+    100232: Object 9 Copy 39
+    100234: Object 9 Copy 6
+    100236: Object 9 Copy 9
+    100238: '{fdb2cbb3-4a43-f340-b816-954b7b0ed267}_node'
+    100240: '{fdb2cbb3-4a43-f340-b816-954b7b0ed267}_node_target'
+    400000: //RootNode
+    400002: Object 12 Copy
+    400004: Object 13
+    400006: Object 13 Copy
+    400008: Object 13 Copy 2
+    400010: Object 13 Copy 3
+    400012: Object 2 Copy 10
+    400014: Object 2 Copy 11
+    400016: Object 2 Copy 12
+    400018: Object 2 Copy 13
+    400020: Object 2 Copy 14
+    400022: Object 2 Copy 15
+    400024: Object 2 Copy 16
+    400026: Object 2 Copy 17
+    400028: Object 2 Copy 18
+    400030: Object 2 Copy 19
+    400032: Object 2 Copy 20
+    400034: Object 2 Copy 21
+    400036: Object 2 Copy 22
+    400038: Object 2 Copy 23
+    400040: Object 2 Copy 4
+    400042: Object 2 Copy 5
+    400044: Object 2 Copy 6
+    400046: Object 2 Copy 7
+    400048: Object 2 Copy 8
+    400050: Object 2 Copy 9
+    400052: Object 21
+    400054: Object 21 Copy
+    400056: Object 24
+    400058: Object 24 Copy
+    400060: Object 26
+    400062: Object 26 Copy
+    400064: Object 26 Copy 2
+    400066: Object 26 Copy 3
+    400068: Object 28
+    400070: Object 28 Copy
+    400072: Object 28 Copy 2
+    400074: Object 28 Copy 3
+    400076: Object 29
+    400078: Object 3 Copy 10
+    400080: Object 3 Copy 11
+    400082: Object 3 Copy 12
+    400084: Object 3 Copy 13
+    400086: Object 3 Copy 14
+    400088: Object 3 Copy 15
+    400090: Object 3 Copy 16
+    400092: Object 3 Copy 17
+    400094: Object 3 Copy 18
+    400096: Object 3 Copy 19
+    400098: Object 3 Copy 4
+    400100: Object 3 Copy 5
+    400102: Object 3 Copy 6
+    400104: Object 3 Copy 7
+    400106: Object 3 Copy 8
+    400108: Object 3 Copy 9
+    400110: Object 30
+    400112: Object 30 Copy
+    400114: Object 32 Copy
+    400116: Object 32 Copy 2
+    400118: Object 32 Copy 3
+    400120: Object 32 Copy 4
+    400122: Object 35
+    400124: Object 35 Copy
+    400126: Object 35 Copy 2
+    400128: Object 35 Copy 3
+    400130: Object 35 Copy 4
+    400132: Object 35 Copy 5
+    400134: Object 35 Copy 6
+    400136: Object 35 Copy 7
+    400138: Object 4 Copy 10
+    400140: Object 4 Copy 11
+    400142: Object 4 Copy 12
+    400144: Object 4 Copy 13
+    400146: Object 4 Copy 14
+    400148: Object 4 Copy 15
+    400150: Object 4 Copy 16
+    400152: Object 4 Copy 17
+    400154: Object 4 Copy 18
+    400156: Object 4 Copy 19
+    400158: Object 4 Copy 4
+    400160: Object 4 Copy 5
+    400162: Object 4 Copy 6
+    400164: Object 4 Copy 7
+    400166: Object 4 Copy 8
+    400168: Object 4 Copy 9
+    400170: Object 43
+    400172: Object 43 Copy
+    400174: Object 9 Copy 10
+    400176: Object 9 Copy 11
+    400178: Object 9 Copy 12
+    400180: Object 9 Copy 13
+    400182: Object 9 Copy 14
+    400184: Object 9 Copy 15
+    400186: Object 9 Copy 16
+    400188: Object 9 Copy 17
+    400190: Object 9 Copy 18
+    400192: Object 9 Copy 19
+    400194: Object 9 Copy 20
+    400196: Object 9 Copy 21
+    400198: Object 9 Copy 22
+    400200: Object 9 Copy 23
+    400202: Object 9 Copy 24
+    400204: Object 9 Copy 25
+    400206: Object 9 Copy 26
+    400208: Object 9 Copy 27
+    400210: Object 9 Copy 28
+    400212: Object 9 Copy 29
+    400214: Object 9 Copy 30
+    400216: Object 9 Copy 31
+    400218: Object 9 Copy 32
+    400220: Object 9 Copy 33
+    400222: Object 9 Copy 34
+    400224: Object 9 Copy 35
+    400226: Object 9 Copy 36
+    400228: Object 9 Copy 37
+    400230: Object 9 Copy 38
+    400232: Object 9 Copy 39
+    400234: Object 9 Copy 6
+    400236: Object 9 Copy 9
+    400238: '{fdb2cbb3-4a43-f340-b816-954b7b0ed267}_node'
+    400240: '{fdb2cbb3-4a43-f340-b816-954b7b0ed267}_node_target'
+    2300000: Object 12 Copy
+    2300002: Object 13
+    2300004: Object 13 Copy
+    2300006: Object 13 Copy 2
+    2300008: Object 13 Copy 3
+    2300010: Object 2 Copy 10
+    2300012: Object 2 Copy 11
+    2300014: Object 2 Copy 12
+    2300016: Object 2 Copy 13
+    2300018: Object 2 Copy 14
+    2300020: Object 2 Copy 15
+    2300022: Object 2 Copy 16
+    2300024: Object 2 Copy 17
+    2300026: Object 2 Copy 18
+    2300028: Object 2 Copy 19
+    2300030: Object 2 Copy 20
+    2300032: Object 2 Copy 21
+    2300034: Object 2 Copy 22
+    2300036: Object 2 Copy 23
+    2300038: Object 2 Copy 4
+    2300040: Object 2 Copy 5
+    2300042: Object 2 Copy 6
+    2300044: Object 2 Copy 7
+    2300046: Object 2 Copy 8
+    2300048: Object 2 Copy 9
+    2300050: Object 21
+    2300052: Object 21 Copy
+    2300054: Object 24
+    2300056: Object 24 Copy
+    2300058: Object 26
+    2300060: Object 26 Copy
+    2300062: Object 26 Copy 2
+    2300064: Object 26 Copy 3
+    2300066: Object 28
+    2300068: Object 28 Copy
+    2300070: Object 28 Copy 2
+    2300072: Object 28 Copy 3
+    2300074: Object 29
+    2300076: Object 3 Copy 10
+    2300078: Object 3 Copy 11
+    2300080: Object 3 Copy 12
+    2300082: Object 3 Copy 13
+    2300084: Object 3 Copy 14
+    2300086: Object 3 Copy 15
+    2300088: Object 3 Copy 16
+    2300090: Object 3 Copy 17
+    2300092: Object 3 Copy 18
+    2300094: Object 3 Copy 19
+    2300096: Object 3 Copy 4
+    2300098: Object 3 Copy 5
+    2300100: Object 3 Copy 6
+    2300102: Object 3 Copy 7
+    2300104: Object 3 Copy 8
+    2300106: Object 3 Copy 9
+    2300108: Object 30
+    2300110: Object 30 Copy
+    2300112: Object 32 Copy
+    2300114: Object 32 Copy 2
+    2300116: Object 32 Copy 3
+    2300118: Object 32 Copy 4
+    2300120: Object 35
+    2300122: Object 35 Copy
+    2300124: Object 35 Copy 2
+    2300126: Object 35 Copy 3
+    2300128: Object 35 Copy 4
+    2300130: Object 35 Copy 5
+    2300132: Object 35 Copy 6
+    2300134: Object 35 Copy 7
+    2300136: Object 4 Copy 10
+    2300138: Object 4 Copy 11
+    2300140: Object 4 Copy 12
+    2300142: Object 4 Copy 13
+    2300144: Object 4 Copy 14
+    2300146: Object 4 Copy 15
+    2300148: Object 4 Copy 16
+    2300150: Object 4 Copy 17
+    2300152: Object 4 Copy 18
+    2300154: Object 4 Copy 19
+    2300156: Object 4 Copy 4
+    2300158: Object 4 Copy 5
+    2300160: Object 4 Copy 6
+    2300162: Object 4 Copy 7
+    2300164: Object 4 Copy 8
+    2300166: Object 4 Copy 9
+    2300168: Object 43
+    2300170: Object 43 Copy
+    2300172: Object 9 Copy 10
+    2300174: Object 9 Copy 11
+    2300176: Object 9 Copy 12
+    2300178: Object 9 Copy 13
+    2300180: Object 9 Copy 14
+    2300182: Object 9 Copy 15
+    2300184: Object 9 Copy 16
+    2300186: Object 9 Copy 17
+    2300188: Object 9 Copy 18
+    2300190: Object 9 Copy 19
+    2300192: Object 9 Copy 20
+    2300194: Object 9 Copy 21
+    2300196: Object 9 Copy 22
+    2300198: Object 9 Copy 23
+    2300200: Object 9 Copy 24
+    2300202: Object 9 Copy 25
+    2300204: Object 9 Copy 26
+    2300206: Object 9 Copy 27
+    2300208: Object 9 Copy 28
+    2300210: Object 9 Copy 29
+    2300212: Object 9 Copy 30
+    2300214: Object 9 Copy 31
+    2300216: Object 9 Copy 32
+    2300218: Object 9 Copy 33
+    2300220: Object 9 Copy 34
+    2300222: Object 9 Copy 35
+    2300224: Object 9 Copy 36
+    2300226: Object 9 Copy 37
+    2300228: Object 9 Copy 38
+    2300230: Object 9 Copy 39
+    2300232: Object 9 Copy 6
+    2300234: Object 9 Copy 9
+    3300000: Object 12 Copy
+    3300002: Object 13
+    3300004: Object 13 Copy
+    3300006: Object 13 Copy 2
+    3300008: Object 13 Copy 3
+    3300010: Object 2 Copy 10
+    3300012: Object 2 Copy 11
+    3300014: Object 2 Copy 12
+    3300016: Object 2 Copy 13
+    3300018: Object 2 Copy 14
+    3300020: Object 2 Copy 15
+    3300022: Object 2 Copy 16
+    3300024: Object 2 Copy 17
+    3300026: Object 2 Copy 18
+    3300028: Object 2 Copy 19
+    3300030: Object 2 Copy 20
+    3300032: Object 2 Copy 21
+    3300034: Object 2 Copy 22
+    3300036: Object 2 Copy 23
+    3300038: Object 2 Copy 4
+    3300040: Object 2 Copy 5
+    3300042: Object 2 Copy 6
+    3300044: Object 2 Copy 7
+    3300046: Object 2 Copy 8
+    3300048: Object 2 Copy 9
+    3300050: Object 21
+    3300052: Object 21 Copy
+    3300054: Object 24
+    3300056: Object 24 Copy
+    3300058: Object 26
+    3300060: Object 26 Copy
+    3300062: Object 26 Copy 2
+    3300064: Object 26 Copy 3
+    3300066: Object 28
+    3300068: Object 28 Copy
+    3300070: Object 28 Copy 2
+    3300072: Object 28 Copy 3
+    3300074: Object 29
+    3300076: Object 3 Copy 10
+    3300078: Object 3 Copy 11
+    3300080: Object 3 Copy 12
+    3300082: Object 3 Copy 13
+    3300084: Object 3 Copy 14
+    3300086: Object 3 Copy 15
+    3300088: Object 3 Copy 16
+    3300090: Object 3 Copy 17
+    3300092: Object 3 Copy 18
+    3300094: Object 3 Copy 19
+    3300096: Object 3 Copy 4
+    3300098: Object 3 Copy 5
+    3300100: Object 3 Copy 6
+    3300102: Object 3 Copy 7
+    3300104: Object 3 Copy 8
+    3300106: Object 3 Copy 9
+    3300108: Object 30
+    3300110: Object 30 Copy
+    3300112: Object 32 Copy
+    3300114: Object 32 Copy 2
+    3300116: Object 32 Copy 3
+    3300118: Object 32 Copy 4
+    3300120: Object 35
+    3300122: Object 35 Copy
+    3300124: Object 35 Copy 2
+    3300126: Object 35 Copy 3
+    3300128: Object 35 Copy 4
+    3300130: Object 35 Copy 5
+    3300132: Object 35 Copy 6
+    3300134: Object 35 Copy 7
+    3300136: Object 4 Copy 10
+    3300138: Object 4 Copy 11
+    3300140: Object 4 Copy 12
+    3300142: Object 4 Copy 13
+    3300144: Object 4 Copy 14
+    3300146: Object 4 Copy 15
+    3300148: Object 4 Copy 16
+    3300150: Object 4 Copy 17
+    3300152: Object 4 Copy 18
+    3300154: Object 4 Copy 19
+    3300156: Object 4 Copy 4
+    3300158: Object 4 Copy 5
+    3300160: Object 4 Copy 6
+    3300162: Object 4 Copy 7
+    3300164: Object 4 Copy 8
+    3300166: Object 4 Copy 9
+    3300168: Object 43
+    3300170: Object 43 Copy
+    3300172: Object 9 Copy 10
+    3300174: Object 9 Copy 11
+    3300176: Object 9 Copy 12
+    3300178: Object 9 Copy 13
+    3300180: Object 9 Copy 14
+    3300182: Object 9 Copy 15
+    3300184: Object 9 Copy 16
+    3300186: Object 9 Copy 17
+    3300188: Object 9 Copy 18
+    3300190: Object 9 Copy 19
+    3300192: Object 9 Copy 20
+    3300194: Object 9 Copy 21
+    3300196: Object 9 Copy 22
+    3300198: Object 9 Copy 23
+    3300200: Object 9 Copy 24
+    3300202: Object 9 Copy 25
+    3300204: Object 9 Copy 26
+    3300206: Object 9 Copy 27
+    3300208: Object 9 Copy 28
+    3300210: Object 9 Copy 29
+    3300212: Object 9 Copy 30
+    3300214: Object 9 Copy 31
+    3300216: Object 9 Copy 32
+    3300218: Object 9 Copy 33
+    3300220: Object 9 Copy 34
+    3300222: Object 9 Copy 35
+    3300224: Object 9 Copy 36
+    3300226: Object 9 Copy 37
+    3300228: Object 9 Copy 38
+    3300230: Object 9 Copy 39
+    3300232: Object 9 Copy 6
+    3300234: Object 9 Copy 9
+    4300000: Object 12 Copy
+    4300002: Object 13
+    4300004: Object 21
+    4300006: Object 13 Copy
+    4300008: Object 13 Copy 2
+    4300010: Object 21 Copy
+    4300012: Object 13 Copy 3
+    4300014: Object 3 Copy 4
+    4300016: Object 4 Copy 4
+    4300018: Object 2 Copy 4
+    4300020: Object 3 Copy 6
+    4300022: Object 4 Copy 6
+    4300024: Object 2 Copy 6
+    4300026: Object 3 Copy 5
+    4300028: Object 4 Copy 5
+    4300030: Object 9 Copy 10
+    4300032: Object 2 Copy 5
+    4300034: Object 3 Copy 7
+    4300036: Object 4 Copy 7
+    4300038: Object 9 Copy 14
+    4300040: Object 2 Copy 7
+    4300042: Object 3 Copy 8
+    4300044: Object 4 Copy 8
+    4300046: Object 2 Copy 8
+    4300048: Object 3 Copy 9
+    4300050: Object 4 Copy 9
+    4300052: Object 2 Copy 9
+    4300054: Object 3 Copy 10
+    4300056: Object 4 Copy 10
+    4300058: Object 2 Copy 10
+    4300060: Object 3 Copy 11
+    4300062: Object 4 Copy 11
+    4300064: Object 2 Copy 11
+    4300066: Object 24
+    4300068: Object 9 Copy 12
+    4300070: Object 9 Copy 24
+    4300072: Object 9 Copy 16
+    4300074: Object 9 Copy 18
+    4300076: Object 9 Copy 20
+    4300078: Object 9 Copy 25
+    4300080: Object 9 Copy 22
+    4300082: Object 9 Copy 26
+    4300084: Object 26
+    4300086: Object 9 Copy 23
+    4300088: Object 9 Copy 27
+    4300090: Object 26 Copy
+    4300092: Object 9 Copy 28
+    4300094: Object 9 Copy 29
+    4300096: Object 26 Copy 2
+    4300098: Object 9 Copy 30
+    4300100: Object 9 Copy 31
+    4300102: Object 26 Copy 3
+    4300104: Object 2 Copy 12
+    4300106: Object 3 Copy 12
+    4300108: Object 4 Copy 12
+    4300110: Object 9 Copy 6
+    4300112: Object 9 Copy 9
+    4300114: Object 9 Copy 11
+    4300116: Object 2 Copy 13
+    4300118: Object 3 Copy 13
+    4300120: Object 4 Copy 13
+    4300122: Object 9 Copy 13
+    4300124: Object 9 Copy 15
+    4300126: Object 2 Copy 14
+    4300128: Object 3 Copy 14
+    4300130: Object 4 Copy 14
+    4300132: Object 9 Copy 17
+    4300134: Object 9 Copy 19
+    4300136: Object 9 Copy 21
+    4300138: Object 2 Copy 15
+    4300140: Object 3 Copy 15
+    4300142: Object 4 Copy 15
+    4300144: Object 9 Copy 32
+    4300146: Object 9 Copy 33
+    4300148: Object 2 Copy 16
+    4300150: Object 2 Copy 17
+    4300152: Object 9 Copy 34
+    4300154: Object 28
+    4300156: Object 28 Copy
+    4300158: Object 2 Copy 18
+    4300160: Object 3 Copy 16
+    4300162: Object 4 Copy 16
+    4300164: Object 9 Copy 35
+    4300166: Object 2 Copy 19
+    4300168: Object 3 Copy 17
+    4300170: Object 4 Copy 17
+    4300172: Object 9 Copy 36
+    4300174: Object 2 Copy 20
+    4300176: Object 3 Copy 18
+    4300178: Object 4 Copy 18
+    4300180: Object 9 Copy 37
+    4300182: Object 2 Copy 21
+    4300184: Object 3 Copy 19
+    4300186: Object 4 Copy 19
+    4300188: Object 9 Copy 38
+    4300190: Object 2 Copy 22
+    4300192: Object 2 Copy 23
+    4300194: Object 9 Copy 39
+    4300196: Object 28 Copy 2
+    4300198: Object 28 Copy 3
+    4300200: Object 29
+    4300202: Object 30
+    4300204: Object 30 Copy
+    4300206: Object 32 Copy
+    4300208: Object 35
+    4300210: Object 35 Copy
+    4300212: Object 32 Copy 2
+    4300214: Object 35 Copy 2
+    4300216: Object 35 Copy 3
+    4300218: Object 32 Copy 3
+    4300220: Object 35 Copy 4
+    4300222: Object 35 Copy 5
+    4300224: Object 32 Copy 4
+    4300226: Object 35 Copy 6
+    4300228: Object 35 Copy 7
+    4300230: Object 24 Copy
+    4300232: Object 43
+    4300234: Object 43 Copy
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
