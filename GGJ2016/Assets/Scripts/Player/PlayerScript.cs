@@ -35,18 +35,17 @@ public class PlayerScript : MonoBehaviour
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
 
-        m_finalMovement += new Vector3(h, 0, v);
-
+        m_finalMovement += new Vector3(v, 0, -h);
+        m_finalMovement *= m_movementSpeed;
     }
 
     private void ProcessGravity()
     {
-        m_finalMovement += new Vector3(0, Physics.gravity.y * m_gravityMultiplier, 0);
-       
+        m_finalMovement += new Vector3(0, Physics.gravity.y * m_gravityMultiplier, 0);  
     }
 
     public void ApplyFinalMovement()
     {
-        m_characterController.Move(m_finalMovement * m_movementSpeed * Time.deltaTime);
+        m_characterController.Move(m_finalMovement * Time.deltaTime);
     }
 }
