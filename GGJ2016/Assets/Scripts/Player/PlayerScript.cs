@@ -38,7 +38,7 @@ public class PlayerScript : MonoBehaviour
         m_camera = FindObjectOfType(typeof(Camera)) as Camera;
         m_cameraOffset = m_camera.transform.position - transform.position;
 	}
-	
+
 	// Update is called once per frame
 	void Update ()
     {

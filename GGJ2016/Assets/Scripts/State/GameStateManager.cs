@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class GameStateManager : MonoBehaviour {
 
     public static GameStateManager Instance;
+    public PlayerScript player;
     public StatusText statusManager;
     public ClockKeys keyManager;
 
@@ -113,5 +115,14 @@ public class GameStateManager : MonoBehaviour {
 		m_switchActive[index - 1] = false;
 		Debug.Log("Switch " + index + " reset as part of chain reset");
 		m_switches[index - 1].ResetChain();
+	}
+
+	// Used for debug purposes only
+	void Update () {
+		if (DEBUG_KEYS) {
+			if (Input.GetKeyDown(KeyCode.R)) {
+				SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+			}
+		}
 	}
 }
