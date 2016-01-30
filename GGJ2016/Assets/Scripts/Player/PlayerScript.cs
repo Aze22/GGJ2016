@@ -52,7 +52,7 @@ public class PlayerScript : MonoBehaviour
     // Function to process key presses
     private void ProcessKeyPresses() {
     	// Handle the interact button
-    	if (Input.GetKeyDown(KeyCode.Space)) {
+    	if (Input.GetButtonUp("Interact")) {
     		if (m_nearbySwitch) {
 				GameStateManager.Instance.BroadcastMessage("ToggleSwitch", m_nearbySwitch.GetIndex());
     		}

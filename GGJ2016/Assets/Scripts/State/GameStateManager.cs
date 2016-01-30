@@ -112,43 +112,4 @@ public class GameStateManager : MonoBehaviour {
 		Debug.Log("Switch " + index + " reset as part of chain reset");
 		m_switches[index - 1].ResetChain();
 	}
-
-	// Update is called once per frame
-	void Update () {
-		if (DEBUG_KEYS) {
-			if (Input.GetKeyDown(KeyCode.Alpha0)) {
-				gameObject.BroadcastMessage("CollectKeyCard", KeyCards.Red);
-			} else if (Input.GetKeyDown(KeyCode.Alpha1)) {
-				gameObject.BroadcastMessage("CollectKeyCard", KeyCards.Green);
-			} else if (Input.GetKeyDown(KeyCode.Alpha2)) {
-				gameObject.BroadcastMessage("CollectKeyCard", KeyCards.Blue);
-			} else if (Input.GetKeyDown(KeyCode.Alpha3)) {
-				gameObject.BroadcastMessage("CollectKeyCard", KeyCards.Magenta);
-			} else if (Input.GetKeyDown(KeyCode.Alpha4)) {
-				gameObject.BroadcastMessage("CollectKeyCard", KeyCards.Yellow);
-			} else if (Input.GetKeyDown(KeyCode.Alpha5)) {
-				gameObject.BroadcastMessage("CollectKeyCard", KeyCards.Cyan);
-			} else if (Input.GetKeyDown(KeyCode.Q)) {
-				gameObject.BroadcastMessage("ToggleSwitch", 1);
-			} else if (Input.GetKeyDown(KeyCode.W)) {
-				gameObject.BroadcastMessage("ToggleSwitch", 2);
-			} else if (Input.GetKeyDown(KeyCode.E)) {
-				gameObject.BroadcastMessage("ToggleSwitch", 3);
-			} else if (Input.GetKeyDown(KeyCode.R)) {
-				gameObject.BroadcastMessage("ToggleSwitch", 4);
-			} else if (Input.GetKeyDown(KeyCode.T)) {
-				gameObject.BroadcastMessage("ToggleSwitch", 5);
-			} else if (Input.GetKeyDown(KeyCode.Y)) {
-				gameObject.BroadcastMessage("ToggleSwitch", 6);
-			} else if (Input.GetKeyDown(KeyCode.U)) {
-				gameObject.BroadcastMessage("ToggleSwitch", 7);
-			} else if (Input.GetKeyDown(KeyCode.I)) {
-				gameObject.BroadcastMessage("ToggleSwitch", 8);
-			} else if (Input.GetKeyDown(KeyCode.O)) {
-				gameObject.BroadcastMessage("ToggleSwitch", 9);
-			} else if (Input.GetKeyDown(KeyCode.P)) {
-				gameObject.BroadcastMessage("ToggleSwitch", 10);
-			}
-		}
-	}
 }
