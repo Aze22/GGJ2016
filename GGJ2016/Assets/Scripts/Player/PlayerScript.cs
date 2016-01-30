@@ -13,6 +13,7 @@ public class PlayerScript : MonoBehaviour
     private Camera m_camera;
     private Vector3 m_finalMovement;
     private Vector3 m_cameraOffset;
+    private Switch m_nearbySwitch;
 
     // Constants
     private const float CAMERA_BOX_X = 2f;
@@ -35,6 +36,7 @@ public class PlayerScript : MonoBehaviour
 	void Update ()
     {
         EarlySetup();
+        ProcessKeyPresses();
         ProcessMovement();
         ProcessGravity();
         ApplyFinalMovement();
@@ -45,6 +47,16 @@ public class PlayerScript : MonoBehaviour
     public void EarlySetup()
     {
         m_finalMovement = Vector3.zero;
+    }
+
+    // Function to process key presses
+    private void ProcessKeyPresses() {
+    	// Handle the interact button
+    	if (Input.GetKeyDown(KeyCode.Space)) {
+    		if (m_nearbySwitch) {
+				GameStateManager.Instance.BroadcastMessage("ToggleSwitch", m_nearbySwitch.GetIndex());
+    		}
+    	}
     }
 
     // Function to check movement inputs
@@ -98,7 +110,6 @@ public class PlayerScript : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         CollectibleScript collectibleScript = other.GetComponent<CollectibleScript>();
-        Debug.Log("poo");
 
         if(collectibleScript != null)
         {
@@ -112,12 +123,7 @@ public class PlayerScript : MonoBehaviour
             doorScript.Open();
         }
 
-        Switch switchScript = other.transform.parent.GetComponent<Switch>();
-
-        if (switchScript!= null)
-        {
-            
-        }
+        m_nearbySwitch = other.transform.parent.GetComponent<Switch>() as Switch;
     }
 
     public void OnTriggerExit(Collider other)
@@ -128,5 +134,9 @@ public class PlayerScript : MonoBehaviour
         {
             doorScript.Close();
         }
+
+		if (m_nearbySwitch == other.transform.parent.GetComponent<Switch>()) {
+			m_nearbySwitch = null;
+		}
     }
 }

@@ -38,7 +38,7 @@ public class Switch : MonoBehaviour
 
 	// Function to get the switch index
 	// This is used when reseting a chain
-	protected int GetIndex() {
+	public int GetIndex() {
 		return m_index;
 	}
 
@@ -81,9 +81,9 @@ public class Switch : MonoBehaviour
             m_state2Mesh.gameObject.SetActive(false);
         }
 
-        for(int i = 0; i < objectsToActivate.Length; i++)
+        for (int i = 0; i < objectsToActivate.Length; i++)
         {
-            if(objectsToActivate[i] != null)
+            if (objectsToActivate[i] != null)
             {
                 objectsToActivate[i].SendMessage("Activate", SendMessageOptions.DontRequireReceiver);
             }

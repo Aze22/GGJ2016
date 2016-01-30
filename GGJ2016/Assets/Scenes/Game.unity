@@ -4891,6 +4891,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11412084, guid: 988ade1459b011f46903c390c200acd6, type: 2}
       propertyPath: keyCardRequired
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11412084, guid: 988ade1459b011f46903c390c200acd6, type: 2}
+      propertyPath: m_locked
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
