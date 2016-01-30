@@ -15,6 +15,11 @@ public class Switch : MonoBehaviour
 	private int m_index = 0;
 	private GameStateManager gameStateManager;
 
+    public GameObject m_state1Mesh;
+    public GameObject m_state2Mesh;
+
+    public GameObject[] objectsToActivate;
+
 	// Initialization
 	void Start () {
 		gameStateManager = FindObjectOfType<GameStateManager>() as GameStateManager;
@@ -48,26 +53,41 @@ public class Switch : MonoBehaviour
 			// Only activate the switch if it has no previous switch, or the previous switch is active
 			if ((m_previousSwitch == null) || (gameStateManager.GetSwitchState(m_previousSwitch.GetIndex()))) {
 				Debug.Log("Previous switch: " + m_previousSwitch);
-				gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+				//gameObject.GetComponent<SpriteRenderer>().color = Color.red;
 				success = true;
 			} else if ((m_previousSwitch) && (m_resetChain)) {
 				// Reset the chain
 				ResetChain();
 				success = false;
 			}
-		} else {
+
+            m_state1Mesh.gameObject.SetActive(false);
+            m_state2Mesh.gameObject.SetActive(true);
+
+        } else {
 			// Only deactivate the switch if it is not a trigger, or we are resetting a chain
 			if (!m_isTrigger) {
-				gameObject.GetComponent<SpriteRenderer>().color = Color.green;
-				success = true;
+                //gameObject.GetComponent<SpriteRenderer>().color = Color.green;     
+                success = true;
 			}
 
 			if ((m_previousSwitch) && (m_resetChain)) {
-				gameObject.GetComponent<SpriteRenderer>().color = Color.green;
+				//gameObject.GetComponent<SpriteRenderer>().color = Color.green;
 				success = true;
 				ResetChain();
 			}
-		}
+
+            m_state1Mesh.gameObject.SetActive(true);
+            m_state2Mesh.gameObject.SetActive(false);
+        }
+
+        for(int i = 0; i < objectsToActivate.Length; i++)
+        {
+            if(objectsToActivate[i] != null)
+            {
+                objectsToActivate[i].SendMessage("Activate", SendMessageOptions.DontRequireReceiver);
+            }
+        }
 
 		Debug.Log("Success: " + success);
 		return success;
@@ -75,14 +95,18 @@ public class Switch : MonoBehaviour
 
 	// Call this function when reseting to avoid any issues with chains
 	public void ResetState() {
-		gameObject.GetComponent<SpriteRenderer>().color = Color.green;
-	}
+		//gameObject.GetComponent<SpriteRenderer>().color = Color.green;
+        m_state1Mesh.gameObject.SetActive(true);
+        m_state2Mesh.gameObject.SetActive(false);
+    }
 
 	// Function to reset a switch chain
 	public void ResetChain() {
-		gameObject.GetComponent<SpriteRenderer>().color = Color.green;
+        //gameObject.GetComponent<SpriteRenderer>().color = Color.green;
+        m_state1Mesh.gameObject.SetActive(true);
+        m_state2Mesh.gameObject.SetActive(false);
 
-		if (m_previousSwitch) {
+        if (m_previousSwitch) {
 			gameStateManager.BroadcastMessage("ResetChain", m_previousSwitch.GetIndex());
 		}
 	}

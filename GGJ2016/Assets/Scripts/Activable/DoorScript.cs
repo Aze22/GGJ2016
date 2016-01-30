@@ -78,4 +78,12 @@ public class DoorScript : MonoBehaviour
             }
         }
     }
+
+    public void Activate()
+    {
+        if (keyCardRequired == GameStateManager.KeyCards.None && m_locked)
+            UnLock();
+        else
+            Lock();
+    }
 }

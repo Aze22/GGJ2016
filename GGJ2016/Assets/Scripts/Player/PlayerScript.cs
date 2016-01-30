@@ -111,6 +111,13 @@ public class PlayerScript : MonoBehaviour
         {
             doorScript.Open();
         }
+
+        Switch switchScript = other.transform.parent.GetComponent<Switch>();
+
+        if (switchScript!= null)
+        {
+            
+        }
     }
 
     public void OnTriggerExit(Collider other)
