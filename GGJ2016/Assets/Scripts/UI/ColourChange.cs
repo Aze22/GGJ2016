@@ -12,22 +12,26 @@ public class ColourChange : MonoBehaviour {
 
     // Count the number of ticks before the end of the day
     private int m_numberTicks = 0;
-    private const int TOTAL_TICKS = 250;
+    private const int TOTAL_TICKS = 7500;
+
+    // Update rates based on TOTAL_TICKS
+    private const float DX = 375f / (float)TOTAL_TICKS;
+    private const float DCOLOR = (1.6666666667f) / (float)TOTAL_TICKS;
 
     void UpdateColor()
     {
         if (!reverse)
         {
-            r -= 1f / 150f;
-            g -= 1f / 150f;
-            b += 1f / 150f;
+			r -= DCOLOR;
+			g -= DCOLOR;
+			b += DCOLOR;
             m_image.color = new Color(r, g, b, 1);
         }
         else
         {
-            r += 1f / 150f;
-            g += 1f / 150f;
-            b -= 1f / 150f;
+			r += DCOLOR;
+			g += DCOLOR;
+			b -= DCOLOR;
             m_image.color = new Color(r, g, b, 1);
         }
         if (r < 0 || r > 1)
@@ -37,7 +41,7 @@ public class ColourChange : MonoBehaviour {
     }
     void UpdatePosition()
     {
-        x += 1.5f;
+        x += DX;
         //rectTransform.position = new Vector3(x, Mathf.Atan(x / 2) + (x * x * x) / 10000, 0);
         rectTransform.position = new Vector3(x, y, 0);
     }
