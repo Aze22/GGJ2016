@@ -59,6 +59,7 @@ GameObject:
   - 4: {fileID: 440702}
   - 33: {fileID: 3361084}
   - 23: {fileID: 2308198}
+  - 65: {fileID: 6516166}
   m_Layer: 0
   m_Name: Mesh
   m_TagString: Untagged
@@ -150,6 +151,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 164980}
   m_Mesh: {fileID: 4300000, guid: 9eed318210e436a4f8c1e1ae0f36594d, type: 3}
+--- !u!65 &6516166
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 164980}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.41669995, y: 0.41669998, z: 0.8596888}
+  m_Center: {x: -0.0000038146973, y: 0, z: 0}
 --- !u!65 &6523382
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -222,6 +235,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_openAtStart: 0
+  m_locked: 0
+  m_light: {fileID: 10893036}
+  m_lockedColor: {r: 1, g: 0.19117647, b: 0.19117647, a: 1}
+  m_unlockedColor: {r: 0.16937117, g: 1, b: 0.1397059, a: 1}
+  keyCardRequired: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

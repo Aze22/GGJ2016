@@ -7,6 +7,12 @@ public class DoorScript : MonoBehaviour
     private Animation m_animation;
     public bool m_openAtStart = false;
     private bool m_open = false;
+    public bool m_locked = true;
+    public Light m_light;
+    public Color m_lockedColor;
+    public Color m_unlockedColor;
+
+    public GameStateManager.KeyCards keyCardRequired = GameStateManager.KeyCards.None;
 
     void Start()
     {
@@ -16,11 +22,32 @@ public class DoorScript : MonoBehaviour
         {
             Open();
         }
+
+        if(m_locked)
+        {
+            Lock();
+        }
+        else
+        {
+            UnLock();
+        }
+    }
+
+    public void Lock()
+    {
+        m_locked = true;
+        m_light.color = m_lockedColor;
+    }
+
+    public void UnLock()
+    {
+        m_locked = false;
+        m_light.color = m_unlockedColor;
     }
 
     public void Open()
     {
-        if(!m_open)
+        if(!m_open && !m_locked)
         {
             m_animation["DoorOpen"].speed = 1;
             m_animation.Play("DoorOpen");

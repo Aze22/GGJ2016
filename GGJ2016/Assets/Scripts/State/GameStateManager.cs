@@ -8,7 +8,8 @@ public class GameStateManager : MonoBehaviour {
 
 	// Types of key card
 	public enum KeyCards : int {
-		Red,
+        None,
+        Red,
 		Green,
 		Blue,
 		Magenta,
