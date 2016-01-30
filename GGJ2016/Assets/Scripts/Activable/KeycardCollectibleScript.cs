@@ -43,6 +43,8 @@ public class KeycardCollectibleScript : CollectibleScript
                 m_meshRenderer.sharedMaterial = magentaMat;
                 break;
         }
+
+        base.Start();
     }
 
     public override void Pickup()
