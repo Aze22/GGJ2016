@@ -94,4 +94,14 @@ public class PlayerScript : MonoBehaviour
 
 		m_camera.transform.position -= cameraDiff;
     }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        CollectibleScript collectibleScript = other.GetComponent<CollectibleScript>();
+
+        if(collectibleScript != null)
+        {
+            collectibleScript.Pickup();
+        }
+    }
 }
