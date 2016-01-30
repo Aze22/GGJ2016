@@ -27,7 +27,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 176490}
   m_LocalRotation: {x: 0.22414389, y: 0.48296297, z: -0.12940955, w: 0.83651626}
-  m_LocalPosition: {x: -19.75, y: 15.14, z: -11.09}
+  m_LocalPosition: {x: -16.91, y: 13.25, z: -9.45}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -97,6 +97,7 @@ MonoBehaviour:
   layer:
     serializedVersion: 2
     m_Bits: 1
+  raycastCheck: {fileID: 0}
 --- !u!124 &12454738
 Behaviour:
   m_ObjectHideFlags: 1

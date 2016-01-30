@@ -12,36 +12,53 @@ public class CameraScript : MonoBehaviour
     public Transform raycastCheck;
 
     private Renderer currentHiddenObject = null;
+    float timeVisible = 0f;
 
     void Update()
     {
-        RaycastHit hit;
-
-        if (Physics.Raycast(raycastCheck.position, player.position, out hit, 2000, layer))
+        if (player != null && raycastCheck != null)
         {
-            Debug.Log(hit.collider.name);
-            if (hit.collider != null && hit.collider.name.Contains("Wall"))
+            RaycastHit m_hit;
+            Ray ray = new Ray(player.transform.position/* + new Vector3(0, -1, 0)*/, raycastCheck.position);
+
+            Debug.DrawLine(raycastCheck.position, player.transform.position /*+ new Vector3(0,-1,0)*/);
+
+            if (Physics.Raycast(ray, out m_hit, 3f, layer))
             {
-                
+                Debug.Log(m_hit.collider.name);
+                if (m_hit.transform.name.Contains("Wall"))
+                {
+                    if (currentHiddenObject != null)
+                        currentHiddenObject.sharedMaterial = normalMat;
 
-                if (currentHiddenObject != null)
-                    currentHiddenObject.sharedMaterial = normalMat;
+                    currentHiddenObject = m_hit.collider.GetComponent<Renderer>();
 
-                currentHiddenObject = hit.collider.GetComponent<Renderer>();
+                    if (currentHiddenObject != null)
+                        currentHiddenObject.sharedMaterial = transparentMat;
 
-                if (currentHiddenObject != null)
-                    currentHiddenObject.sharedMaterial = transparentMat;
+                    timeVisible = 0f;
+                }
+                else
+                {
+                    timeVisible += Time.deltaTime;
+
+                    if (timeVisible > 0.2f)
+                    {
+                        if (currentHiddenObject != null)
+                            currentHiddenObject.sharedMaterial = normalMat;
+                    }
+                }
             }
             else
             {
-                if (currentHiddenObject != null)
-                    currentHiddenObject.sharedMaterial = normalMat;
+                timeVisible += Time.deltaTime;
+
+                if (timeVisible > 0.2f)
+                {
+                    if (currentHiddenObject != null)
+                        currentHiddenObject.sharedMaterial = normalMat;
+                }
             }
-        }
-        else
-        {
-            /*if (currentHiddenObject != null)
-                currentHiddenObject.sharedMaterial = normalMat;*/
         }
     }
 }

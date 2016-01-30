@@ -25,7 +25,6 @@ GameObject:
   - 4: {fileID: 424178}
   - 33: {fileID: 3399596}
   - 23: {fileID: 2369680}
-  - 95: {fileID: 9532068}
   - 65: {fileID: 6568636}
   m_Layer: 0
   m_Name: Wall24
@@ -104,23 +103,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.41670007, y: 0.41670007, z: 0.41669998}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!95 &9532068
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 156982}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: eb51f8f7cbf9f9f49bfc717491d60b8b, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
