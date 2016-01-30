@@ -10,6 +10,10 @@ public class ColourChange : MonoBehaviour {
     private Image m_image;
     private RectTransform rectTransform;
 
+    // Count the number of ticks before the end of the day
+    private int m_numberTicks = 0;
+    private const int TOTAL_TICKS = 250;
+
     void UpdateColor()
     {
         if (!reverse)
@@ -35,7 +39,7 @@ public class ColourChange : MonoBehaviour {
     {
         x += 1f;
         //rectTransform.position = new Vector3(x, Mathf.Atan(x / 2) + (x * x * x) / 10000, 0);
-        rectTransform.position = new Vector3(x,y, 0);
+        rectTransform.position = new Vector3(x, y, 0);
     }
 
     void Start()
@@ -55,7 +59,10 @@ public class ColourChange : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        UpdateColor();
-        UpdatePosition();        
+		if (m_numberTicks < TOTAL_TICKS) {
+			m_numberTicks++;
+        	UpdateColor();
+        	UpdatePosition();        
+        }
 	}
 }
