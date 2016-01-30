@@ -3,7 +3,8 @@ using System.Collections;
 
 public class PlayerScript : MonoBehaviour
 {
-	// Public variables
+    // Public variables
+    public static PlayerScript Instance;
     public Vector3 m_startPosition;
 	public float m_movementSpeed = 5f;
     public float m_gravityMultiplier = 1f;
@@ -14,11 +15,17 @@ public class PlayerScript : MonoBehaviour
     private Vector3 m_finalMovement;
     private Vector3 m_cameraOffset;
     private Switch m_nearbySwitch;
+    public DoorScript m_nearbyDoor;
 
     // Constants
     private const float CAMERA_BOX_X = 2f;
 	private const float CAMERA_BOX_Y = 2f;
 	private const float CAMERA_BOX_Z = 2f;
+
+    void Awake()
+    {
+        Instance = this;
+    }
 
 	// Use this for initialization
 	void Start ()
@@ -52,7 +59,7 @@ public class PlayerScript : MonoBehaviour
     // Function to process key presses
     private void ProcessKeyPresses() {
     	// Handle the interact button
-    	if (Input.GetKeyDown(KeyCode.Space)) {
+    	if (Input.GetButtonUp("Interact")) {
     		if (m_nearbySwitch) {
 				GameStateManager.Instance.BroadcastMessage("ToggleSwitch", m_nearbySwitch.GetIndex());
     		}
@@ -120,6 +127,7 @@ public class PlayerScript : MonoBehaviour
 
         if (doorScript!= null)
         {
+            m_nearbyDoor = doorScript;
             doorScript.Open();
         }
 
@@ -133,6 +141,7 @@ public class PlayerScript : MonoBehaviour
         if (doorScript != null)
         {
             doorScript.Close();
+            m_nearbyDoor = null;
         }
 
 		if (m_nearbySwitch == other.transform.parent.GetComponent<Switch>()) {
