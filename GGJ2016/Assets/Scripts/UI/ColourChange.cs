@@ -5,7 +5,7 @@ using System.Collections;
 public class ColourChange : MonoBehaviour {
 
     public float colour, r, g, b;
-    public float x, y;
+    public float x, y, theta = 0.0f;
     public bool reverse;
     private Image m_image;
     private RectTransform rectTransform;
@@ -41,7 +41,9 @@ public class ColourChange : MonoBehaviour {
     }
     void UpdatePosition()
     {
-        x += DX;
+        theta += DX;
+        x = (float)Screen.width*0.5f + 35*Mathf.Sin(theta*0.2f);
+        y = 55f + 35*Mathf.Cos(theta*0.2f);
         //rectTransform.position = new Vector3(x, Mathf.Atan(x / 2) + (x * x * x) / 10000, 0);
         rectTransform.position = new Vector3(x, y, 0);
     }

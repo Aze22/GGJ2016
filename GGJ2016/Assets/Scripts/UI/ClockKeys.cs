@@ -15,5 +15,6 @@ public class ClockKeys : MonoBehaviour {
 	// Collect a key
 	public void CollectKey(GameStateManager.KeyCards index) {
 		keyImages[((int)index) - 1].enabled = true;
-	}
+        keyImages[((int)index) + 5].enabled = true;
+    }
 }
