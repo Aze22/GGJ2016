@@ -4,6 +4,7 @@ using System.Collections;
 public class GameStateManager : MonoBehaviour {
 
     public static GameStateManager Instance;
+    public StatusText statusManager;
 
 	// Types of key card
 	public enum KeyCards : int {
@@ -14,6 +15,14 @@ public class GameStateManager : MonoBehaviour {
 		Yellow,
 		Cyan,
 		NumKeyCards
+	};
+	private readonly string[] KEY_CARD_NAMES = {
+		"Red",
+		"Green",
+		"Blue",
+		"Magenta",
+		"Yellow",
+		"Cyan"
 	};
 
 	// Whether each key card has been collected
@@ -30,7 +39,6 @@ public class GameStateManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
         // Assign static instance for ease of access
         Instance = this;
 
@@ -64,7 +72,8 @@ public class GameStateManager : MonoBehaviour {
 	// Function to collect key cards
 	// Call this function using gameStateManager.BroadcastMessage("CollectKeyCard", GameStateManager.KeyCards.colour)
 	public void CollectKeyCard(KeyCards index) {
-		Debug.Log("Key card collected: " + index);
+		Debug.Log("Collected key card " + index);
+		statusManager.SetStatus(KEY_CARD_NAMES[(int)index] + " key card collected");
 		m_keyCards[(int)index] = true;
 	}
 
