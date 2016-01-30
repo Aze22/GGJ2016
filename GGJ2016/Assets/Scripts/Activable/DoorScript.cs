@@ -23,7 +23,7 @@ public class DoorScript : MonoBehaviour
             Open();
         }
 
-        if(m_locked)
+        if(m_locked || keyCardRequired != GameStateManager.KeyCards.None)
         {
             Lock();
         }
@@ -47,8 +47,13 @@ public class DoorScript : MonoBehaviour
 
     public void Open()
     {
-        if(!m_open && !m_locked)
+        if(!m_open && (!m_locked || GameStateManager.Instance.HasKeyCard(keyCardRequired)))
         {
+            if(m_locked)
+            {
+                m_light.color = m_unlockedColor;
+            }
+
             m_animation["DoorOpen"].speed = 1;
             m_animation.Play("DoorOpen");
             m_open = true;
@@ -66,6 +71,11 @@ public class DoorScript : MonoBehaviour
 
             m_animation.Play("DoorOpen");
             m_open = false;
+
+            if (m_locked)
+            {
+                m_light.color = m_lockedColor;
+            }
         }
     }
 }
