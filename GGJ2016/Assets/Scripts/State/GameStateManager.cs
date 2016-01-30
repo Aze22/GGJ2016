@@ -48,6 +48,7 @@ public class GameStateManager : MonoBehaviour {
 
 		// Reset the switch states
 		for (index = 0; index < m_switches.Length; index++) {
+			m_switches[index].SetIndex(index + 1);
 			m_switches[index].SetState(false);
 			m_switchActive[index] = false;
 		}
@@ -80,6 +81,15 @@ public class GameStateManager : MonoBehaviour {
 		return m_switchActive[index - 1];
 	}
 	
+	// Function to reset a switch chain
+	// Call this function using gameStateManager.BroadcastMessage("ResetChain", index)
+	// Use 1-based counting
+	void ResetChain(int index) {
+		m_switchActive[index - 1] = false;
+		Debug.Log("Switch " + index + " reset as part of chain reset");
+		m_switches[index - 1].ResetChain();
+	}
+
 	// Update is called once per frame
 	void Update () {
 		if (DEBUG_KEYS) {
