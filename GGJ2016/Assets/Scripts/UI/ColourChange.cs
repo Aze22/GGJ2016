@@ -37,7 +37,7 @@ public class ColourChange : MonoBehaviour {
     }
     void UpdatePosition()
     {
-        x += 1f;
+        x += 1.5f;
         //rectTransform.position = new Vector3(x, Mathf.Atan(x / 2) + (x * x * x) / 10000, 0);
         rectTransform.position = new Vector3(x, y, 0);
     }
