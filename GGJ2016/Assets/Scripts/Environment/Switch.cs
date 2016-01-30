@@ -39,32 +39,48 @@ public class Switch : MonoBehaviour
 
 	// Call this function to set the switch state
 	// This function should update the switch asset to an appropriate state (e.g. change graphic)
-	public void SetState(bool state) {
+	public bool SetState(bool state) {
+		bool success = false;
 		Debug.Log("Setting switch state to " + state);
 
 		// Modify this code to toggle the different states, based on the final switch assets
 		if (state) {
 			// Only activate the switch if it has no previous switch, or the previous switch is active
-			if ((m_previousSwitch == null) || (gameStateManager.GetSwitch(m_index))) {
-				//gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+			if ((m_previousSwitch == null) || (gameStateManager.GetSwitchState(m_previousSwitch.GetIndex()))) {
+				Debug.Log("Previous switch: " + m_previousSwitch);
+				gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+				success = true;
 			} else if ((m_previousSwitch) && (m_resetChain)) {
 				// Reset the chain
 				ResetChain();
+				success = false;
 			}
 		} else {
 			// Only deactivate the switch if it is not a trigger, or we are resetting a chain
 			if (!m_isTrigger) {
-				//gameObject.GetComponent<SpriteRenderer>().color = Color.green;
-			} else if ((m_previousSwitch) && (m_resetChain)) {
-				//gameObject.GetComponent<SpriteRenderer>().color = Color.green;
+				gameObject.GetComponent<SpriteRenderer>().color = Color.green;
+				success = true;
+			}
+
+			if ((m_previousSwitch) && (m_resetChain)) {
+				gameObject.GetComponent<SpriteRenderer>().color = Color.green;
+				success = true;
 				ResetChain();
 			}
 		}
+
+		Debug.Log("Success: " + success);
+		return success;
+	}
+
+	// Call this function when reseting to avoid any issues with chains
+	public void ResetState() {
+		gameObject.GetComponent<SpriteRenderer>().color = Color.green;
 	}
 
 	// Function to reset a switch chain
 	public void ResetChain() {
-		//gameObject.GetComponent<SpriteRenderer>().color = Color.green;
+		gameObject.GetComponent<SpriteRenderer>().color = Color.green;
 
 		if (m_previousSwitch) {
 			gameStateManager.BroadcastMessage("ResetChain", m_previousSwitch.GetIndex());

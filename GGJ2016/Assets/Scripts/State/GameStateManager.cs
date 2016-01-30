@@ -56,7 +56,7 @@ public class GameStateManager : MonoBehaviour {
 		// Reset the switch states
 		for (index = 0; index < m_switches.Length; index++) {
 			m_switches[index].SetIndex(index + 1);
-			m_switches[index].SetState(false);
+			m_switches[index].ResetState();
 			m_switchActive[index] = false;
 		}
 	}
@@ -77,14 +77,19 @@ public class GameStateManager : MonoBehaviour {
 	// Call this function using gameStateManager.BroadcastMessage("ToggleSwitch", index)
 	// Use 1-based counting
 	void ToggleSwitch(int index) {
-		m_switchActive[index - 1] = !m_switchActive[index - 1];
-		Debug.Log("Switch " + index + " state changed to " + m_switchActive[index - 1]);
-		m_switches[index - 1].SetState(m_switchActive[index - 1]);
+		// Switch is responsible for checking whether a switch can be toggled
+		bool success = m_switches[index - 1].SetState(!m_switchActive[index - 1]);
+
+		// Toggle the switch if we can
+		if (success) {
+			m_switchActive[index - 1] = !m_switchActive[index - 1];
+			Debug.Log("Switch " + index + " state changed to " + m_switchActive[index - 1]);
+		}
 	}
 
 	// Public function to get particular switch's state
 	// Use 1-based counting
-	public bool GetSwitch(int index) {
+	public bool GetSwitchState(int index) {
 		return m_switchActive[index - 1];
 	}
 	
