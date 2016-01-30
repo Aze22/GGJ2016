@@ -169,6 +169,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 224: {fileID: 22469574}
+  - 114: {fileID: 11488930}
   m_Layer: 5
   m_Name: Clock
   m_TagString: Untagged
@@ -591,6 +592,24 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &11488930
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 156790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04d42d44e4b9440d296640b88974e954, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyImages:
+  - {fileID: 11403194}
+  - {fileID: 11425066}
+  - {fileID: 11466352}
+  - {fileID: 11472010}
+  - {fileID: 11457576}
+  - {fileID: 11421396}
 --- !u!114 &11492824
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -738,7 +757,7 @@ RectTransform:
   m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_Children: []
   m_Father: {fileID: 22469574}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -43.50006, y: -128}
@@ -789,7 +808,7 @@ RectTransform:
   m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_Children: []
   m_Father: {fileID: 22469574}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -43.50006, y: -128}
@@ -847,8 +866,8 @@ RectTransform:
   - {fileID: 22479052}
   - {fileID: 22448708}
   - {fileID: 22482662}
-  - {fileID: 22409860}
   - {fileID: 22445700}
+  - {fileID: 22409860}
   - {fileID: 22475880}
   m_Father: {fileID: 0}
   m_RootOrder: 0
