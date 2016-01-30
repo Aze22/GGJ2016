@@ -5,6 +5,7 @@ public class GameStateManager : MonoBehaviour {
 
     public static GameStateManager Instance;
     public StatusText statusManager;
+    public ClockKeys keyManager;
 
 	// Types of key card
 	public enum KeyCards : int {
@@ -76,6 +77,7 @@ public class GameStateManager : MonoBehaviour {
 	public void CollectKeyCard(KeyCards index) {
 		Debug.Log("Collected key card " + index);
 		statusManager.SetStatus(KEY_CARD_NAMES[(int)index] + " key card collected");
+		keyManager.CollectKey(index);
 		m_keyCards[(int)index] = true;
 	}
 

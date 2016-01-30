@@ -1,15 +1,19 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class ClockKeys : MonoBehaviour {
+	public Image[] keyImages;
 
-	// Use this for initialization
-	void Start () {
-	
+	// Make sure none of the keys are collected at the start
+	void Start() {
+		for (int index = 0; index < keyImages.Length; index++) {
+			keyImages[index].enabled = false;
+		}
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+
+	// Collect a key
+	public void CollectKey(GameStateManager.KeyCards index) {
+		keyImages[((int)index) - 1].enabled = true;
 	}
 }
