@@ -53,12 +53,12 @@ public class GameStateManager : MonoBehaviour {
 		Debug.Log(m_switches.Length + " switches");
 
 		// Reset the game state
-		Reset();
+		SwitchReset();
 	}
 
 	// Function to reset the game state
 	// Call this function using gameStateManager.BroadcastMessage("Reset")
-	void Reset () {
+	void SwitchReset () {
 		int index;
 
 		// Reset the key cards
@@ -117,12 +117,8 @@ public class GameStateManager : MonoBehaviour {
 		m_switches[index - 1].ResetChain();
 	}
 
-	// Used for debug purposes only
-	void Update () {
-		if (DEBUG_KEYS) {
-			if (Input.GetKeyDown(KeyCode.R)) {
-				SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-			}
-		}
-	}
+    public void Reset()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 }

@@ -132,6 +132,11 @@ public class PlayerScript : MonoBehaviour
         }
 
         m_nearbySwitch = other.transform.parent.GetComponent<Switch>() as Switch;
+
+        if(other.name.Contains("Killzone"))
+        {
+            GameStateManager.Instance.Reset();
+        }
     }
 
     public void OnTriggerExit(Collider other)
