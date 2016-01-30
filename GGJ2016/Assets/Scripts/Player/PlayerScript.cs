@@ -104,5 +104,22 @@ public class PlayerScript : MonoBehaviour
         {
             collectibleScript.Pickup();
         }
+
+        DoorScript doorScript = other.transform.parent.GetComponent<DoorScript>();
+
+        if (doorScript!= null)
+        {
+            doorScript.Open();
+        }
+    }
+
+    public void OnTriggerExit(Collider other)
+    {
+        DoorScript doorScript = other.transform.parent.GetComponent<DoorScript>();
+
+        if (doorScript != null)
+        {
+            doorScript.Close();
+        }
     }
 }
