@@ -25,6 +25,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 400756}
   - 111: {fileID: 11120964}
+  - 114: {fileID: 11412084}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -159,7 +160,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 30, y: 1, z: 1.5}
+  m_Size: {x: 60, y: 1, z: 1.5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!108 &10893036
 Light:
@@ -206,9 +207,21 @@ Animation:
   m_Animations:
   - {fileID: 7400000, guid: a65e88ffc83ee034f94928423664debf, type: 2}
   m_WrapMode: 0
-  m_PlayAutomatically: 1
+  m_PlayAutomatically: 0
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!114 &11412084
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 137676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0e71f46adacd17468c2510bce0a933a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_openAtStart: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

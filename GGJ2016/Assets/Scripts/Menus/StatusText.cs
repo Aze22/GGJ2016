@@ -32,10 +32,13 @@ public class StatusText : MonoBehaviour {
 	// Call this function using statusText.BroadcastMessage("SetStatus", status)
 	public void SetStatus(string status) {
 		Debug.Log("Show status: " + status);
-		Color color = m_text.material.color;
-		color.a = 1f;
-		m_text.material.color = color;
-		m_text.text = status;
-		m_fadeTimeLeft = FADE_DURATION;
+        if (m_text != null)
+        {
+            Color color = m_text.material.color;
+            color.a = 1f;
+            m_text.material.color = color;
+            m_text.text = status;
+            m_fadeTimeLeft = FADE_DURATION;
+        }
 	}
 }
