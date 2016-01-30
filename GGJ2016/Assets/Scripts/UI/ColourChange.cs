@@ -14,16 +14,16 @@ public class ColourChange : MonoBehaviour {
     {
         if (!reverse)
         {
-            r -= 1f / 125f;
-            g -= 1f / 125f;
-            b += 1f / 125f;
+            r -= 1f / 150f;
+            g -= 1f / 150f;
+            b += 1f / 150f;
             m_image.color = new Color(r, g, b, 1);
         }
         else
         {
-            r += 1f / 125f;
-            g += 1f / 125f;
-            b -= 1f / 125f;
+            r += 1f / 150f;
+            g += 1f / 150f;
+            b -= 1f / 150f;
             m_image.color = new Color(r, g, b, 1);
         }
         if (r < 0 || r > 1)
