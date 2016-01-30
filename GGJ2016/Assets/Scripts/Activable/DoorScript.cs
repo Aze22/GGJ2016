@@ -37,12 +37,18 @@ public class DoorScript : MonoBehaviour
     {
         m_locked = true;
         m_light.color = m_lockedColor;
+
+        if ( PlayerScript.Instance.m_nearbyDoor != null)
+            PlayerScript.Instance.m_nearbyDoor.Close();
     }
 
     public void UnLock()
     {
         m_locked = false;
         m_light.color = m_unlockedColor;
+
+        if (PlayerScript.Instance.m_nearbyDoor != null)
+            PlayerScript.Instance.m_nearbyDoor.Open();
     }
 
     public void Open()
