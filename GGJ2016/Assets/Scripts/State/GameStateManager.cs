@@ -18,7 +18,8 @@ public class GameStateManager : MonoBehaviour {
 		NumKeyCards
 	};
 	private readonly string[] KEY_CARD_NAMES = {
-		"Red",
+        "None",
+        "Red",
 		"Green",
 		"Blue",
 		"Magenta",
