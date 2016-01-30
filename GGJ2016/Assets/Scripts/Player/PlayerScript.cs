@@ -98,6 +98,7 @@ public class PlayerScript : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         CollectibleScript collectibleScript = other.GetComponent<CollectibleScript>();
+        Debug.Log("poo");
 
         if(collectibleScript != null)
         {

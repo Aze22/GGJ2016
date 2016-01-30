@@ -6,7 +6,7 @@ public class StatusText : MonoBehaviour {
 	Text m_text;
 
 	// Status gradually fades
-	const float FADE_DURATION = 1f;
+	const float FADE_DURATION = 2f;
 	float m_fadeTimeLeft;
 
 	// Use this for initialization
