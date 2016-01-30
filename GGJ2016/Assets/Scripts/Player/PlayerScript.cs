@@ -86,8 +86,6 @@ public class PlayerScript : MonoBehaviour
     public void ApplyFinalMovement()
     {
         m_characterController.Move(m_finalMovement * Time.deltaTime);
-
-        if (transform.position.y < 3.5f) ;
     }
 
     // Function to update the camera position, based on character position
