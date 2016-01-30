@@ -17,7 +17,7 @@ public class CameraScript : MonoBehaviour
     {
         RaycastHit hit;
 
-        if (Physics.Raycast(raycastCheck.position, player.position + new Vector3(0,-2f,0), out hit, 2000, layer))
+        if (Physics.Raycast(raycastCheck.position, player.position, out hit, 2000, layer))
         {
             Debug.Log(hit.collider.name);
             if (hit.collider != null && hit.collider.name.Contains("Wall"))
@@ -40,8 +40,8 @@ public class CameraScript : MonoBehaviour
         }
         else
         {
-            if (currentHiddenObject != null)
-                currentHiddenObject.sharedMaterial = normalMat;
+            /*if (currentHiddenObject != null)
+                currentHiddenObject.sharedMaterial = normalMat;*/
         }
     }
 }
