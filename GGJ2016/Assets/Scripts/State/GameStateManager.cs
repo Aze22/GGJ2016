@@ -2,6 +2,9 @@
 using System.Collections;
 
 public class GameStateManager : MonoBehaviour {
+
+    public static GameStateManager Instance;
+
 	// Types of key card
 	public enum KeyCards : int {
 		Red,
@@ -27,6 +30,10 @@ public class GameStateManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+        // Assign static instance for ease of access
+        Instance = this;
+
 		// Set up references to switches
 		m_switches = GameObject.FindObjectsOfType(typeof(Switch)) as Switch[];
 		m_switchActive = new bool[m_switches.Length];
@@ -55,7 +62,7 @@ public class GameStateManager : MonoBehaviour {
 
 	// Function to collect key cards
 	// Call this function using gameStateManager.BroadcastMessage("CollectKeyCard", GameStateManager.KeyCards.colour)
-	void CollectKeyCard(KeyCards index) {
+	public void CollectKeyCard(KeyCards index) {
 		Debug.Log("Key card collected: " + index);
 		m_keyCards[(int)index] = true;
 	}
