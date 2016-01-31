@@ -8,6 +8,7 @@ public class GameStateManager : MonoBehaviour {
     public PlayerScript player;
     public StatusText statusManager;
     public ClockKeys keyManager;
+    public LevelManager levelManager;
 
 	// Types of key card
 	public enum KeyCards : int {
@@ -119,6 +120,23 @@ public class GameStateManager : MonoBehaviour {
 
     public void Reset()
     {
+    	//SceneManager.UnloadScene(SceneManager.GetActiveScene().buildIndex);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    // This function exists purely to handle debug keys
+    void Update () {
+    	if (DEBUG_KEYS) {
+    		if (Input.GetKeyDown(KeyCode.Escape)) {
+    			// Drop out to the menu
+    			levelManager.LoadLevel("Menu");
+			} else if (Input.GetKeyDown(KeyCode.R)) {
+				// Reset
+				Reset();
+			} else if (Input.GetKeyDown(KeyCode.Tab)) {
+				// Cycle through skins
+				Debug.Log("Tab pressed: cycle character meshes");
+    		}
+    	}
     }
 }
