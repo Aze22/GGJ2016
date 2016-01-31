@@ -15,7 +15,11 @@ public class EnemyScript : MonoBehaviour {
 
 	private Transform m_meshT;
 	private float m_waited = 0f;
-	private enum State
+
+    private Animator m_animator;
+    private bool walking = false;
+
+    private enum State
 	{
 		Idle,
 		Walking,
@@ -25,7 +29,11 @@ public class EnemyScript : MonoBehaviour {
 	private State m_currentState;
 
 	
-
+    void Awake()
+    {
+        m_animator = transform.FindChild("Mesh").GetComponent<Animator>();
+        walking = false;
+    }
 	// Use this for initialization
 	void Start ()
 	{
@@ -43,7 +51,9 @@ public class EnemyScript : MonoBehaviour {
 		m_currentState = State.Idle;
 		m_meshT = transform.FindChild("Mesh");
 		m_directionVector = m_meshT.forward;
-	}
+
+        m_animator.SetBool("walking", false);
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -66,8 +76,8 @@ public class EnemyScript : MonoBehaviour {
 
 		if (m_directionVector != Vector3.zero)
 		{
-			Vector3 targetDir = (transform.position + m_directionVector) - m_meshT.position;
-			Vector3 newDir = Vector3.RotateTowards(m_meshT.forward, targetDir, Time.deltaTime * 20, 0f);
+			Vector3 targetDir = (transform.position + (m_directionVector * -2)) - m_meshT.position;
+			Vector3 newDir = Vector3.RotateTowards(m_meshT.forward, targetDir, Time.deltaTime * 30, 0f);
 			m_meshT.transform.rotation = Quaternion.LookRotation(newDir);
 			m_meshT.eulerAngles = new Vector3(0, m_meshT.eulerAngles.y, m_meshT.eulerAngles.z);
 		}
@@ -103,24 +113,37 @@ public class EnemyScript : MonoBehaviour {
 		}
 	}
 
-	private void IdleUpdate()
-	{
-		if(m_currentWaypoint != null)
-		{
-			if(m_waited < m_currentWaypoint.m_waitHere)
-			{
-				m_waited += Time.deltaTime;
-			}
-			else
-			{
-				m_currentWaypointIndex++;
-				if (m_currentWaypointIndex >= m_waypoints.Length)
-					m_currentWaypointIndex = 0;
+    private void IdleUpdate()
+    {
+        if (m_currentWaypoint != null)
+        {
+            if (m_waited < m_currentWaypoint.m_waitHere)
+            {
+                m_waited += Time.deltaTime;
 
-				m_currentWaypoint = m_waypoints[m_currentWaypointIndex];
-				m_currentState = State.Walking;
-			}
-		}
-	}
+                if (walking)
+                {
+                    m_animator.SetBool("walking", false);
+                    walking = false;
+                }
+                
+            }
+            else
+            {
+                m_currentWaypointIndex++;
+                if (m_currentWaypointIndex >= m_waypoints.Length)
+                    m_currentWaypointIndex = 0;
 
+                m_currentWaypoint = m_waypoints[m_currentWaypointIndex];
+                m_currentState = State.Walking;
+
+                if (!walking)
+                {
+                    m_animator.SetBool("walking", true);
+                    walking = true;
+                }
+  
+            }
+        }
+    }
 }
