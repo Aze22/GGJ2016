@@ -3,6 +3,8 @@ using System.Collections;
 
 public class BottomLight : MonoBehaviour 
 {
+	public float flashSpeed = 0.1f;
+	public float flashAmplitude = 6f;
 
     private Light m_light;
     float value = 0f;
@@ -17,7 +19,7 @@ public class BottomLight : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        value += 0.1f;
-        m_light.intensity = 5f + 3 * Mathf.Sin(value);
+		value += flashSpeed;
+		m_light.intensity = 5f + ((flashAmplitude * Mathf.Sin(value)) / 2f);
 	}
 }

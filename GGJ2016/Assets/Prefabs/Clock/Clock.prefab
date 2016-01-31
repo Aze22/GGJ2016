@@ -170,6 +170,7 @@ GameObject:
   m_Component:
   - 224: {fileID: 22469574}
   - 114: {fileID: 11488930}
+  - 114: {fileID: 11418396}
   m_Layer: 5
   m_Name: Clock
   m_TagString: Untagged
@@ -268,7 +269,7 @@ MonoBehaviour:
   analog: 1
 --- !u!114 &11418396
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 156790}
@@ -284,12 +285,12 @@ MonoBehaviour:
   - {fileID: 11472010}
   - {fileID: 11457576}
   - {fileID: 11421396}
-  - {fileID: 11438220}
-  - {fileID: 11433766}
-  - {fileID: 11452002}
-  - {fileID: 11442228}
-  - {fileID: 11454764}
-  - {fileID: 11400792}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &11421046
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -414,6 +415,7 @@ MonoBehaviour:
   b: 0
   x: 0
   y: 0
+  theta: 0
   reverse: 0
 --- !u!114 &11442378
 MonoBehaviour:

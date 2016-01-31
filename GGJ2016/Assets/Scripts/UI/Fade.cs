@@ -5,7 +5,7 @@ using System.Collections;
 
 public class Fade : MonoBehaviour {
 
-    public Image m_image;
+    private Image m_image;
     float opacity = 1f;
 
 	// Use this for initialization
