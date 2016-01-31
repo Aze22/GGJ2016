@@ -70,13 +70,13 @@ public class PlayerScript : MonoBehaviour
 		//m_meshT.LookAt(transform.position + m_directionVector);
 
 
-		/*if (m_directionVector != Vector3.zero)
+	    if (m_directionVector != Vector3.zero && m_finalMovement != Vector3.zero)
 		{
-			Vector3 targetDir = (transform.position + m_directionVector) - m_meshT.position;
+			Vector3 targetDir = (m_meshT.transform.position + (-m_directionVector * 2)) - m_meshT.position;
 			Vector3 newDir = Vector3.RotateTowards(m_meshT.forward, targetDir, Time.deltaTime * 20, 0f);
-			transform.rotation = Quaternion.LookRotation(newDir);
+            m_meshT.transform.rotation = Quaternion.LookRotation(newDir);
 			m_meshT.eulerAngles = new Vector3(0, m_meshT.eulerAngles.y, m_meshT.eulerAngles.z);
-		}*/
+		}
 	}
 
 	// Initializes movement
