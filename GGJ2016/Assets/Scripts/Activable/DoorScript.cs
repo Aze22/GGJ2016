@@ -34,7 +34,7 @@ public class DoorScript : MonoBehaviour
             Open();
         }
 
-        if(m_locked || keyCardRequired != GameStateManager.KeyCards.None)
+        if ((m_locked) || (keyCardRequired != GameStateManager.KeyCards.None))
         {
             Lock();
         }
@@ -57,7 +57,7 @@ public class DoorScript : MonoBehaviour
         m_locked = true;
         m_light.color = m_lockedColor;
 
-		if (keyCardRequired != GameStateManager.KeyCards.None) {
+        if (keyCardRequired == GameStateManager.KeyCards.None) {
 			m_meshRenderer.material = closedMaterial;
 		}
 
@@ -71,7 +71,7 @@ public class DoorScript : MonoBehaviour
         m_locked = false;
         m_light.color = m_unlockedColor;
 
-		if (keyCardRequired != GameStateManager.KeyCards.None) {
+		if (keyCardRequired == GameStateManager.KeyCards.None) {
 			m_meshRenderer.material = openMaterial;
 		}
 
@@ -82,7 +82,7 @@ public class DoorScript : MonoBehaviour
 
     public void Open()
     {
-        if(!m_open && (!m_locked || GameStateManager.Instance.HasKeyCard(keyCardRequired)))
+        if ((!m_open) && ((!m_locked) || (GameStateManager.Instance.HasKeyCard(keyCardRequired))))
         {
             if(m_locked)
             {
