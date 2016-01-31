@@ -26,9 +26,14 @@ public class PlayerScript : MonoBehaviour
 	private Transform m_meshT;
 	private Vector3 m_directionVector;
 
+    private Animator m_animator;
+    private bool walking = false;
+
     void Awake()
     {
         Instance = this;
+        m_animator = transform.FindChild("Mesh").GetComponent<Animator>();
+        walking = false;
     }
 
 	// Use this for initialization
@@ -44,6 +49,8 @@ public class PlayerScript : MonoBehaviour
 
 		m_meshT = transform.FindChild("Mesh");
 		m_directionVector = m_meshT.forward;
+
+        m_animator.SetBool("walking", false);
 	}
 
 	// Update is called once per frame
@@ -63,13 +70,13 @@ public class PlayerScript : MonoBehaviour
 		//m_meshT.LookAt(transform.position + m_directionVector);
 
 
-		if (m_directionVector != Vector3.zero)
+		/*if (m_directionVector != Vector3.zero)
 		{
 			Vector3 targetDir = (transform.position + m_directionVector) - m_meshT.position;
 			Vector3 newDir = Vector3.RotateTowards(m_meshT.forward, targetDir, Time.deltaTime * 20, 0f);
 			transform.rotation = Quaternion.LookRotation(newDir);
 			m_meshT.eulerAngles = new Vector3(0, m_meshT.eulerAngles.y, m_meshT.eulerAngles.z);
-		}
+		}*/
 	}
 
 	// Initializes movement
@@ -94,11 +101,33 @@ public class PlayerScript : MonoBehaviour
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
 
+        if(v != 0 || h != 0)
+        {
+            if (!walking)
+            {
+                m_animator.SetBool("walking", true);
+                walking = true;
+            }
+           
+        }
+        else
+        {
+            if(walking)
+            {
+                m_animator.SetBool("walking", false);
+                walking = false;
+            }
+        }
+
         m_finalMovement += new Vector3(v, 0, -h);
         m_finalMovement *= m_movementSpeed;
 
-		if(m_finalMovement != Vector3.zero)
-			m_directionVector = m_finalMovement;
+        if (m_finalMovement != Vector3.zero)
+        {
+            m_directionVector = m_finalMovement;
+
+           
+        }
     }
 
     // Function to handle gravity
