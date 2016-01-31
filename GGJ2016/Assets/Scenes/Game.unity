@@ -4472,6 +4472,18 @@ Prefab:
       propertyPath: m_waypoints.Array.data[2]
       value: 
       objectReference: {fileID: 1385101394}
+    - target: {fileID: 2351482, guid: 7c5b6a2dc24f31f44b38a12e67e37505, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0d58635613de2450b8f38742af9209b2, type: 2}
+    - target: {fileID: 3380962, guid: 7c5b6a2dc24f31f44b38a12e67e37505, type: 2}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: 9e08976a77b7c43a682efa5931097612, type: 3}
+    - target: {fileID: 9539354, guid: 7c5b6a2dc24f31f44b38a12e67e37505, type: 2}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: 9e08976a77b7c43a682efa5931097612, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7c5b6a2dc24f31f44b38a12e67e37505, type: 2}
   m_IsPrefabParent: 0
