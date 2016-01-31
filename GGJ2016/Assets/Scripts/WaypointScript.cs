@@ -4,7 +4,7 @@ using System.Collections;
 public class WaypointScript : MonoBehaviour {
 
 	public float m_waitHere = 1f;
-	private float m_waited = 0f;
+	//private float m_waited = 0f;
 
 	public Color unselectedColor;
 	public Color selectedColor;
