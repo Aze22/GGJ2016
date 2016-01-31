@@ -266,8 +266,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cog: {fileID: 22426156}
   analog: 1
-<<<<<<< d10a6db24f4366471cef4ea5e489ca2f4acad3dd
-=======
 --- !u!114 &11418396
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -292,7 +290,6 @@ MonoBehaviour:
   - {fileID: 11442228}
   - {fileID: 11454764}
   - {fileID: 11400792}
->>>>>>> 8fbec0100fa9a604eb2684b5903236ba89aedd7d
 --- !u!114 &11421046
 MonoBehaviour:
   m_ObjectHideFlags: 1
