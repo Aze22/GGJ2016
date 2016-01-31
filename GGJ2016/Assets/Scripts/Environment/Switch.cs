@@ -22,10 +22,15 @@ public class Switch : MonoBehaviour
 
     public AudioClip activateSound;
 	public AudioClip disactivateSound;
+	public GameObject musicManager;
+	private AudioSource audioSource;
 
 	// Initialization
 	void Start () {
 		gameStateManager = FindObjectOfType<GameStateManager>() as GameStateManager;
+		GameObject go = GameObject.Instantiate(musicManager, transform.position, Quaternion.identity) as GameObject;
+		audioSource = go.GetComponentInParent<AudioSource>() as AudioSource;
+		audioSource.transform.position = transform.position;
 	}
 
 	// Function to check if this switch is a trigger
@@ -86,10 +91,14 @@ public class Switch : MonoBehaviour
 		Debug.Log("Success: " + success);
 
 		// Play a sound based on result of press
-		if ((!success) || (!state) || (reset)) {
-			AudioSource.PlayClipAtPoint(disactivateSound, transform.position);
-		} else {
-			AudioSource.PlayClipAtPoint(activateSound, transform.position);
+		if (audioSource) {
+			if ((!success) || (!state) || (reset)) {
+				audioSource.clip = disactivateSound;
+				audioSource.Play();
+			} else {
+				audioSource.clip = activateSound;
+				audioSource.Play();
+			}
 		}
 
 		if (success) {

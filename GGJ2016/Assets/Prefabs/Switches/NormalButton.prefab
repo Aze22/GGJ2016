@@ -251,6 +251,7 @@ MonoBehaviour:
   - {fileID: 0}
   activateSound: {fileID: 8300000, guid: 25c535d19292d4fbea401b0fee199f33, type: 3}
   disactivateSound: {fileID: 8300000, guid: fec1666f31b2e42fc8fa97076a89141c, type: 3}
+  musicManager: {fileID: 117988, guid: 2feee5af5d6ae49a8ae548c60f0cc662, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -274,6 +275,10 @@ Prefab:
       propertyPath: disactivateSound
       value: 
       objectReference: {fileID: 8300000, guid: fec1666f31b2e42fc8fa97076a89141c, type: 3}
+    - target: {fileID: 0}
+      propertyPath: musicManager
+      value: 
+      objectReference: {fileID: 117988, guid: 2feee5af5d6ae49a8ae548c60f0cc662, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 136530}

@@ -20,6 +20,8 @@ public class KeycardCollectibleScript : CollectibleScript
 
     public Renderer m_meshRenderer;
     public AudioClip collectSound;
+	public GameObject musicManager;
+	private AudioSource audioSource;
 
     public override void Start()
     {
@@ -45,13 +47,17 @@ public class KeycardCollectibleScript : CollectibleScript
                 break;
         }
 
+		GameObject go = GameObject.Instantiate(musicManager, transform.position, Quaternion.identity) as GameObject;
+		audioSource = go.GetComponentInParent<AudioSource>() as AudioSource;
+		audioSource.transform.position = transform.position;
         base.Start();
     }
 
     public override void Pickup()
     {
-    	if (collectSound) {
-    		AudioSource.PlayClipAtPoint(collectSound, transform.position);
+    	if (audioSource) {
+			audioSource.clip = collectSound;
+			audioSource.Play();
     	}
 
         GameStateManager.Instance.CollectKeyCard(m_keyType);

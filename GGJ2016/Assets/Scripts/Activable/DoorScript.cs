@@ -13,6 +13,8 @@ public class DoorScript : MonoBehaviour
     public Color m_unlockedColor;
     public AudioClip openSound;
 	public AudioClip closeSound;
+	public GameObject musicManager;
+	private AudioSource audioSource;
 
     public GameStateManager.KeyCards keyCardRequired = GameStateManager.KeyCards.None;
 
@@ -33,6 +35,10 @@ public class DoorScript : MonoBehaviour
         {
             UnLock();
         }
+
+		GameObject go = GameObject.Instantiate(musicManager, transform.position, Quaternion.identity) as GameObject;
+		audioSource = go.GetComponentInParent<AudioSource>() as AudioSource;
+		audioSource.transform.position = transform.position;
     }
 
     public void Lock()
@@ -65,7 +71,11 @@ public class DoorScript : MonoBehaviour
             m_animation["DoorOpen"].speed = 1;
             m_animation.Play("DoorOpen");
             m_open = true;
-			AudioSource.PlayClipAtPoint(openSound, transform.position);
+
+            if (audioSource) {
+				audioSource.clip = openSound;
+            	audioSource.Play();
+            }
         }
     }
 
@@ -81,7 +91,11 @@ public class DoorScript : MonoBehaviour
 
             m_animation.Play("DoorOpen");
             m_open = false;
-			AudioSource.PlayClipAtPoint(closeSound, transform.position);
+
+            if (audioSource) {
+				audioSource.clip = openSound;
+            	audioSource.Play();
+            }
 
             if (m_locked)
             {
