@@ -9,6 +9,7 @@ public class GameStateManager : MonoBehaviour {
     public StatusText statusManager;
     public ClockKeys keyManager;
     public LevelManager levelManager;
+    public Material[] skins;
 
 	// Types of key card
 	public enum KeyCards : int {
@@ -39,6 +40,10 @@ public class GameStateManager : MonoBehaviour {
 
 	// Whether each switch has been activated
 	private bool[] m_switchActive;
+
+	// Skin renderer
+	private SkinnedMeshRenderer m_renderer;
+	private int m_skin = 0;
 
 	// Controls whether debug keys for state management are enabled
 	private const bool DEBUG_KEYS = true;
@@ -72,6 +77,9 @@ public class GameStateManager : MonoBehaviour {
 		m_switches = GameObject.FindObjectsOfType(typeof(Switch)) as Switch[];
 		m_switchActive = new bool[m_switches.Length];
 		Debug.Log(m_switches.Length + " switches");
+
+		// Get skin renderer
+		m_renderer = player.GetComponentInChildren<SkinnedMeshRenderer>() as SkinnedMeshRenderer;
 
 		// Reset the game state
 		SwitchReset();
@@ -156,6 +164,13 @@ public class GameStateManager : MonoBehaviour {
 			} else if (Input.GetKeyDown(KeyCode.Tab)) {
 				// Cycle through skins
 				Debug.Log("Tab pressed: cycle character meshes");
+				Debug.Log(m_renderer);
+
+				if ((m_renderer) && (skins.Length > 0)) {
+					m_skin = (m_skin + 1) % skins.Length;
+					Debug.Log(m_skin);
+					m_renderer.sharedMaterial = skins[m_skin];
+				}
     		}
     	}
     }
