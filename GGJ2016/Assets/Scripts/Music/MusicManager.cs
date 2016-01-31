@@ -18,6 +18,7 @@ public class MusicManager : MonoBehaviour {
 
 		// Check for an existing MusicManager
 		if ((instance) && (instance != this)) {
+			instance.OnLevelWasLoaded(SceneManager.GetActiveScene().buildIndex);
 			Destroy(gameObject);
 		} else {
 			instance = this;
@@ -61,7 +62,7 @@ public class MusicManager : MonoBehaviour {
 			return;
 		}
 
-		AudioClip levelMusic = levelMusicChangeArray[levelPrefix];
+		AudioClip levelMusic = levelMusicChangeArray[SceneManager.GetActiveScene().buildIndex];
 		Debug.Log("MusicManager: level " + level + " (" + levelPrefix + "); playing " + levelMusic);
 
 		if ((levelMusic) && (levelMusic != music.clip)) {

@@ -40,7 +40,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.5
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -52,7 +52,7 @@ AudioSource:
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
-  BypassListenerEffects: 0
+  BypassListenerEffects: 1
   BypassReverbZones: 0
   rolloffCustomCurve:
     serializedVersion: 2
@@ -115,6 +115,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelMusicChangeArray:
+  - {fileID: 8300000, guid: ddd70a1a573274348882c3114ab1401a, type: 3}
+  - {fileID: 8300000, guid: 3626bea44748c4db39282fb7be663178, type: 3}
   - {fileID: 8300000, guid: 3626bea44748c4db39282fb7be663178, type: 3}
 --- !u!1001 &100100000
 Prefab:
