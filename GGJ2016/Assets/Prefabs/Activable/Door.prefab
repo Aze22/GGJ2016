@@ -239,6 +239,8 @@ MonoBehaviour:
   m_light: {fileID: 10893036}
   m_lockedColor: {r: 1, g: 0.19117647, b: 0.19117647, a: 1}
   m_unlockedColor: {r: 0.16937117, g: 1, b: 0.1397059, a: 1}
+  openSound: {fileID: 8300000, guid: cc005349be87b4b49abc9d2f9ad8ddc5, type: 3}
+  closeSound: {fileID: 8300000, guid: 644d31f583ab24a3592c551022cb7090, type: 3}
   keyCardRequired: 0
 --- !u!1001 &100100000
 Prefab:
@@ -246,7 +248,15 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: openSound
+      value: 
+      objectReference: {fileID: 8300000, guid: cc005349be87b4b49abc9d2f9ad8ddc5, type: 3}
+    - target: {fileID: 0}
+      propertyPath: closeSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 644d31f583ab24a3592c551022cb7090, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 137676}

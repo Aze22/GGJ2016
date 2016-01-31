@@ -3,19 +3,28 @@ using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class MusicManager : MonoBehaviour {
+	static MusicManager instance = null;
+
 	public AudioClip[] levelMusicChangeArray;
 
 	private AudioSource music;
 
 	void Awake () {
 		Debug.Log ("Don't destroy on load: " + name);
-		GameObject.DontDestroyOnLoad(gameObject);
 	}
 
 	void Start () {
 		Debug.Log("Started MusicManager");
-		music = GetComponent<AudioSource>();
-		OnLevelWasLoaded(SceneManager.GetActiveScene().buildIndex);
+
+		// Check for an existing MusicManager
+		if ((instance) && (instance != this)) {
+			Destroy(gameObject);
+		} else {
+			instance = this;
+			GameObject.DontDestroyOnLoad(gameObject);
+			music = GetComponent<AudioSource>();
+			OnLevelWasLoaded(SceneManager.GetActiveScene().buildIndex);
+		}
 	}
 
 	private int GetIntPrefix(string input) {

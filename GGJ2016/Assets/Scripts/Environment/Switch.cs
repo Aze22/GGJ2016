@@ -20,6 +20,9 @@ public class Switch : MonoBehaviour
 
     public GameObject[] objectsToActivate;
 
+    public AudioClip activateSound;
+	public AudioClip disactivateSound;
+
 	// Initialization
 	void Start () {
 		gameStateManager = FindObjectOfType<GameStateManager>() as GameStateManager;
@@ -46,6 +49,7 @@ public class Switch : MonoBehaviour
 	// This function should update the switch asset to an appropriate state (e.g. change graphic)
 	public bool SetState(bool state) {
 		bool success = false;
+		bool reset = false;
 		Debug.Log("Setting switch " + m_index + " state to " + state);
 
 		// Modify this code to toggle the different states, based on the final switch assets
@@ -60,6 +64,7 @@ public class Switch : MonoBehaviour
 				// Reset the chain
 				ResetChain();
 				success = false;
+				reset = true;
 			}
         } else {
 			// Only deactivate the switch if it is not a trigger, or we are resetting a chain
@@ -74,10 +79,18 @@ public class Switch : MonoBehaviour
             	m_state2Mesh.gameObject.SetActive(false);
 				success = true;
 				ResetChain();
+				reset = true;
 			}
         }
 
 		Debug.Log("Success: " + success);
+
+		// Play a sound based on result of press
+		if ((!success) || (!state) || (reset)) {
+			AudioSource.PlayClipAtPoint(disactivateSound, transform.position);
+		} else {
+			AudioSource.PlayClipAtPoint(activateSound, transform.position);
+		}
 
 		if (success) {
         	for (int i = 0; i < objectsToActivate.Length; i++)

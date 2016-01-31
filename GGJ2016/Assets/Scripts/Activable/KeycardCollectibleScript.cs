@@ -19,6 +19,7 @@ public class KeycardCollectibleScript : CollectibleScript
     public Material magentaMat;
 
     public Renderer m_meshRenderer;
+    public AudioClip collectSound;
 
     public override void Start()
     {
@@ -49,6 +50,10 @@ public class KeycardCollectibleScript : CollectibleScript
 
     public override void Pickup()
     {
+    	if (collectSound) {
+    		AudioSource.PlayClipAtPoint(collectSound, transform.position);
+    	}
+
         GameStateManager.Instance.CollectKeyCard(m_keyType);
         base.Pickup();
     }

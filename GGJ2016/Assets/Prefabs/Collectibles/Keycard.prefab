@@ -170,7 +170,7 @@ Animation:
   m_Animations:
   - {fileID: 7400000, guid: 4ce05b4884aad8041a3889490a548b54, type: 2}
   m_WrapMode: 0
-  m_PlayAutomatically: 0
+  m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
 --- !u!114 &11406036
@@ -230,6 +230,7 @@ MonoBehaviour:
   yellowMat: {fileID: 2100000, guid: 582dea9ed9283bc43b0532ff799486f2, type: 2}
   magentaMat: {fileID: 2100000, guid: 1e4afbc43c646474da178ddc6f35f988, type: 2}
   m_meshRenderer: {fileID: 2347860}
+  collectSound: {fileID: 8300000, guid: a712dc19c65ad45eca043d2664afb526, type: 3}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -243,7 +244,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_PlayAutomatically
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_Intensity
@@ -257,6 +258,10 @@ Prefab:
       propertyPath: m_Shadows.m_Type
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: collectSound
+      value: 
+      objectReference: {fileID: 8300000, guid: a712dc19c65ad45eca043d2664afb526, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 189468}

@@ -11,6 +11,8 @@ public class DoorScript : MonoBehaviour
     public Light m_light;
     public Color m_lockedColor;
     public Color m_unlockedColor;
+    public AudioClip openSound;
+	public AudioClip closeSound;
 
     public GameStateManager.KeyCards keyCardRequired = GameStateManager.KeyCards.None;
 
@@ -63,6 +65,7 @@ public class DoorScript : MonoBehaviour
             m_animation["DoorOpen"].speed = 1;
             m_animation.Play("DoorOpen");
             m_open = true;
+			AudioSource.PlayClipAtPoint(openSound, transform.position);
         }
     }
 
@@ -78,6 +81,7 @@ public class DoorScript : MonoBehaviour
 
             m_animation.Play("DoorOpen");
             m_open = false;
+			AudioSource.PlayClipAtPoint(closeSound, transform.position);
 
             if (m_locked)
             {
