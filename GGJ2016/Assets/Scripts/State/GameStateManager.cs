@@ -58,10 +58,6 @@ public class GameStateManager : MonoBehaviour {
 			perms[index] = perms[randomIndex];
 			perms[randomIndex] = temp;
 		}
-
-		for (int index = 0; index < perms.Length; index++) {
-			Debug.Log(perms[index]);
-		}
 	}
 
 	// Use this for initialization
