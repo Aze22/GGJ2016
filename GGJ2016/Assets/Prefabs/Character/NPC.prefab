@@ -42,7 +42,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 109600}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.2, z: 0}
+  m_LocalPosition: {x: 1.48, y: 1.2, z: 16.27}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 441990}
@@ -70,7 +70,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 0d58635613de2450b8f38742af9209b2, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -92,7 +92,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 142496}
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300000, guid: 9e08976a77b7c43a682efa5931097612, type: 3}
 --- !u!54 &5481676
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -122,7 +122,7 @@ MonoBehaviour:
   m_movementSpeed: 5
   m_rotationSpeed: 3
   m_gravityMultiplier: 1
-  m_behaviour: 0
+  m_behaviour: 3
 --- !u!143 &14317716
 CharacterController:
   m_ObjectHideFlags: 1
@@ -134,7 +134,7 @@ CharacterController:
   m_Enabled: 1
   serializedVersion: 2
   m_Height: 2
-  m_Radius: 0.5
+  m_Radius: 0.41
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
