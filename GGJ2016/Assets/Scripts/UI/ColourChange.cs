@@ -4,7 +4,7 @@ using System.Collections;
 
 public class ColourChange : MonoBehaviour {
 
-    public float colour, r, g, b;
+    public float r, g, b;
     public float x, y, theta = 0.0f;
     public bool reverse;
     private Image m_image;
@@ -12,10 +12,10 @@ public class ColourChange : MonoBehaviour {
 
     // Count the number of ticks before the end of the day
     private int m_numberTicks = 0;
-    private const int TOTAL_TICKS = 7500;
+    private const int TOTAL_TICKS = 50 * (2 * 60);
 
     // Update rates based on TOTAL_TICKS
-    private const float DX = 375f / (float)TOTAL_TICKS;
+    private const float DX = (2f * Mathf.PI) / (float)TOTAL_TICKS;
     private const float DCOLOR = (1.6666666667f) / (float)TOTAL_TICKS;
 
     void UpdateColor()
@@ -25,16 +25,16 @@ public class ColourChange : MonoBehaviour {
 			r -= DCOLOR;
 			g -= DCOLOR;
 			b += DCOLOR;
-            m_image.color = new Color(r, g, b, 1);
+            m_image.color = new Color(r, g, b, 1f);
         }
         else
         {
 			r += DCOLOR;
 			g += DCOLOR;
 			b -= DCOLOR;
-            m_image.color = new Color(r, g, b, 1);
+            m_image.color = new Color(r, g, b, 1f);
         }
-        if (r < 0 || r > 1)
+        if (r < 0f || r > 1f)
         {
             reverse = !reverse;
         }
@@ -42,19 +42,19 @@ public class ColourChange : MonoBehaviour {
     void UpdatePosition()
     {
         theta += DX;
-        x = (float)Screen.width*0.5f + 35*Mathf.Sin(theta*0.2f);
-        y = 55f + 35*Mathf.Cos(theta*0.2f);
+        x = ((float)Screen.width * 0.5f) + (35f * Mathf.Sin(theta));
+        y = 70f + (35f * Mathf.Cos(theta));
         //rectTransform.position = new Vector3(x, Mathf.Atan(x / 2) + (x * x * x) / 10000, 0);
-        rectTransform.position = new Vector3(x, y, 0);
+        rectTransform.position = new Vector3(x, y, 0f);
     }
 
     void Start()
     {
-        r = 1;
-        g = 1;
-        b = 0;
+        r = 1f;
+        g = 1f;
+        b = 0f;
         m_image = GetComponent<Image>();
-        m_image.color = new Color(r,g,b,1);
+        m_image.color = new Color(r, g, b, 1f);
         rectTransform = GetComponent<RectTransform>() as RectTransform;
         x = rectTransform.position.x;
         y = rectTransform.position.y;
@@ -69,6 +69,8 @@ public class ColourChange : MonoBehaviour {
 			m_numberTicks++;
         	UpdateColor();
         	UpdatePosition();        
+        } else {
+			GameStateManager.Instance.BroadcastMessage("Reset");
         }
 	}
 }
