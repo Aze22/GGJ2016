@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 4a767a6df384e4d25924b6007aa7a3e8
-timeCreated: 1454247508
+guid: da67085632610694bb21b71c387b2167
+timeCreated: 1454246793
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
@@ -96,7 +96,7 @@ ModelImporter:
     400086: SplineIK
     400088: transform2
     4300000: pCube3
-    7400000: Take 001
+    7400000: walk_nobake
     9500000: //RootNode
     13700000: pCube3
   materials:
@@ -113,17 +113,135 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    animationCompression: 1
+    animationCompression: 0
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: walk_nobake
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 24
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: back
+        weight: 1
+      - path: Hip
+        weight: 1
+      - path: Hip/Left_UpperLeg
+        weight: 1
+      - path: Hip/Left_UpperLeg/Left_LowerLeg
+        weight: 1
+      - path: Hip/Left_UpperLeg/Left_LowerLeg/Left_Foot
+        weight: 1
+      - path: Hip/Left_UpperLeg/Left_LowerLeg/Left_Foot/Left_Toe
+        weight: 1
+      - path: Hip/Left_UpperLeg/Left_LowerLeg/Left_Foot/Left_Toe/Left_ToeEnd
+        weight: 1
+      - path: Hip/Right_UpperLeg
+        weight: 1
+      - path: Hip/Right_UpperLeg/Right_LowerLeg
+        weight: 1
+      - path: Hip/Right_UpperLeg/Right_LowerLeg/Right_Foot
+        weight: 1
+      - path: Hip/Right_UpperLeg/Right_LowerLeg/Right_Foot/Right_Toe
+        weight: 1
+      - path: Hip/Right_UpperLeg/Right_LowerLeg/Right_Foot/Right_Toe/Right_ToeEnd
+        weight: 1
+      - path: Hip/Spine01
+        weight: 1
+      - path: Hip/Spine01/Spine02
+        weight: 1
+      - path: Hip/Spine01/Spine02/Spine03
+        weight: 1
+      - path: Hip/Spine01/Spine02/Spine03/Left_Colar
+        weight: 1
+      - path: Hip/Spine01/Spine02/Spine03/Left_Colar/Left_UpperArm
+        weight: 1
+      - path: Hip/Spine01/Spine02/Spine03/Left_Colar/Left_UpperArm/Left_LowerArm
+        weight: 1
+      - path: Hip/Spine01/Spine02/Spine03/Left_Colar/Left_UpperArm/Left_LowerArm/Left_Hand
+        weight: 1
+      - path: Hip/Spine01/Spine02/Spine03/Left_Colar/Left_UpperArm/Left_LowerArm/Left_Hand/Left_HandEnd
+        weight: 1
+      - path: Hip/Spine01/Spine02/Spine03/Right_Colar
+        weight: 1
+      - path: Hip/Spine01/Spine02/Spine03/Right_Colar1
+        weight: 1
+      - path: Hip/Spine01/Spine02/Spine03/Right_Colar1/Right_UpperArm
+        weight: 1
+      - path: Hip/Spine01/Spine02/Spine03/Right_Colar1/Right_UpperArm/Right_LowerArm
+        weight: 1
+      - path: Hip/Spine01/Spine02/Spine03/Right_Colar1/Right_UpperArm/Right_LowerArm/Right_Hand
+        weight: 1
+      - path: Hip/Spine01/Spine02/Spine03/Right_Colar1/Right_UpperArm/Right_LowerArm/Right_Hand/Right_HandEnd
+        weight: 1
+      - path: Hip/Spine01/Spine02/Spine03/Spine04
+        weight: 1
+      - path: Hip/Spine01/Spine02/Spine03/Spine04/Neck
+        weight: 1
+      - path: Hip/Spine01/Spine02/Spine03/Spine04/Neck/Head
+        weight: 1
+      - path: Hip/Spine01/Spine02/Spine03/Spine04/Neck/Head/HeadEnd
+        weight: 1
+      - path: HipCTRL
+        weight: 1
+      - path: Left_ArmCTRL1
+        weight: 1
+      - path: Left_ArmIK
+        weight: 1
+      - path: Left_LegCTRL
+        weight: 1
+      - path: Left_LegIK
+        weight: 1
+      - path: pCube1
+        weight: 1
+      - path: pCube1/transform2
+        weight: 1
+      - path: pCube3
+        weight: 1
+      - path: Right_ArmCTRL
+        weight: 1
+      - path: Right_ArmIK
+        weight: 1
+      - path: Right_LegCTRL
+        weight: 1
+      - path: Right_LegIK
+        weight: 1
+      - path: SplineCurve
+        weight: 1
+      - path: SplineIK
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 1
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 42
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
