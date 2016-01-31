@@ -3483,6 +3483,10 @@ Prefab:
       propertyPath: keyCardRequired
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2308198, guid: 988ade1459b011f46903c390c200acd6, type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6e17fd98c52865b459e43aa27587d0ca, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 988ade1459b011f46903c390c200acd6, type: 2}
   m_IsPrefabParent: 0

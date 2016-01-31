@@ -243,6 +243,14 @@ MonoBehaviour:
   closeSound: {fileID: 8300000, guid: 644d31f583ab24a3592c551022cb7090, type: 3}
   musicManager: {fileID: 117988, guid: 2feee5af5d6ae49a8ae548c60f0cc662, type: 2}
   keyCardRequired: 0
+  openMaterial: {fileID: 2100000, guid: a58a5fa39ba295342b204151ff4e61c7, type: 2}
+  keycardMaterials:
+  - {fileID: 2100000, guid: 06913e43c25d343fea493f83f1f63beb, type: 2}
+  - {fileID: 2100000, guid: 2547adf637db147de8646cbdb1c70180, type: 2}
+  - {fileID: 2100000, guid: 6d37c9cf190a64852a3f2e93fb8bca4d, type: 2}
+  - {fileID: 2100000, guid: e767bf02854864eaf9383876a828db49, type: 2}
+  - {fileID: 2100000, guid: 058ad36e18ff34e18b99d75a7b241596, type: 2}
+  - {fileID: 2100000, guid: 5fdd8704e6f9f4c1fbd7012eabf33618, type: 2}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -250,6 +258,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: openSound
       value: 
@@ -266,6 +278,42 @@ Prefab:
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 8249834, guid: 2feee5af5d6ae49a8ae548c60f0cc662, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6e17fd98c52865b459e43aa27587d0ca, type: 2}
+    - target: {fileID: 0}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: a58a5fa39ba295342b204151ff4e61c7, type: 2}
+    - target: {fileID: 0}
+      propertyPath: openMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: a58a5fa39ba295342b204151ff4e61c7, type: 2}
+    - target: {fileID: 0}
+      propertyPath: keycardMaterials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 06913e43c25d343fea493f83f1f63beb, type: 2}
+    - target: {fileID: 0}
+      propertyPath: keycardMaterials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 2547adf637db147de8646cbdb1c70180, type: 2}
+    - target: {fileID: 0}
+      propertyPath: keycardMaterials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6d37c9cf190a64852a3f2e93fb8bca4d, type: 2}
+    - target: {fileID: 0}
+      propertyPath: keycardMaterials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: e767bf02854864eaf9383876a828db49, type: 2}
+    - target: {fileID: 0}
+      propertyPath: keycardMaterials.Array.data[4]
+      value: 
+      objectReference: {fileID: 2100000, guid: 058ad36e18ff34e18b99d75a7b241596, type: 2}
+    - target: {fileID: 0}
+      propertyPath: keycardMaterials.Array.data[5]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5fdd8704e6f9f4c1fbd7012eabf33618, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 137676}

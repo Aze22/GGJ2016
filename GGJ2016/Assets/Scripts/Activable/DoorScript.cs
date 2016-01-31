@@ -5,6 +5,7 @@ using System;
 public class DoorScript : MonoBehaviour
 {
     private Animation m_animation;
+	private MeshRenderer m_meshRenderer;
     public bool m_openAtStart = false;
     private bool m_open = false;
     public bool m_locked = true;
@@ -15,14 +16,20 @@ public class DoorScript : MonoBehaviour
 	public AudioClip closeSound;
 	public GameObject musicManager;
 	private AudioSource audioSource;
+	public GameStateManager.KeyCards keyCardRequired = GameStateManager.KeyCards.None;
 
-    public GameStateManager.KeyCards keyCardRequired = GameStateManager.KeyCards.None;
+	// Materials for standard and keycard doors
+	public Material openMaterial;
+	private Material closedMaterial;
+	public Material[] keycardMaterials = new Material[(int)GameStateManager.KeyCards.NumKeyCards - 1];
 
     void Start()
     {
         m_animation = GetComponent<Animation>();
+        m_meshRenderer = GetComponentInChildren<MeshRenderer>();
+        closedMaterial = m_meshRenderer.material;
 
-        if(m_openAtStart)
+        if (m_openAtStart)
         {
             Open();
         }
@@ -36,6 +43,10 @@ public class DoorScript : MonoBehaviour
             UnLock();
         }
 
+        if (keyCardRequired != GameStateManager.KeyCards.None) {
+			m_meshRenderer.material = keycardMaterials[GameStateManager.perms[(int)keyCardRequired - 1]];
+        }
+
 		GameObject go = GameObject.Instantiate(musicManager, transform.position, Quaternion.identity) as GameObject;
 		audioSource = go.GetComponentInParent<AudioSource>() as AudioSource;
 		audioSource.transform.position = transform.position;
@@ -46,8 +57,13 @@ public class DoorScript : MonoBehaviour
         m_locked = true;
         m_light.color = m_lockedColor;
 
-        if ( PlayerScript.Instance.m_nearbyDoor != null)
-            PlayerScript.Instance.m_nearbyDoor.Close();
+		if (keyCardRequired != GameStateManager.KeyCards.None) {
+			m_meshRenderer.material = closedMaterial;
+		}
+
+		if (PlayerScript.Instance.m_nearbyDoor != null) {
+			PlayerScript.Instance.m_nearbyDoor.Close();
+		}
     }
 
     public void UnLock()
@@ -55,8 +71,13 @@ public class DoorScript : MonoBehaviour
         m_locked = false;
         m_light.color = m_unlockedColor;
 
-        if (PlayerScript.Instance.m_nearbyDoor != null)
-            PlayerScript.Instance.m_nearbyDoor.Open();
+		if (keyCardRequired != GameStateManager.KeyCards.None) {
+			m_meshRenderer.material = openMaterial;
+		}
+
+		if (PlayerScript.Instance.m_nearbyDoor != null) {
+			PlayerScript.Instance.m_nearbyDoor.Open();
+		}
     }
 
     public void Open()

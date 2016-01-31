@@ -43,10 +43,34 @@ public class GameStateManager : MonoBehaviour {
 	// Controls whether debug keys for state management are enabled
 	private const bool DEBUG_KEYS = true;
 
+	// Random permutations for the key card logos
+	public static int[] perms = new int[(int)KeyCards.NumKeyCards - 1];
+
+	// Function to set up permutations
+	void Permute () {
+		for (int index = 0; index < perms.Length; index++) {
+			perms[index] = index;
+		}
+
+		for (int index = 0; index < perms.Length - 1; index++) {
+			int temp = perms[index];
+			int randomIndex = Random.Range(index + 1, perms.Length);
+			perms[index] = perms[randomIndex];
+			perms[randomIndex] = temp;
+		}
+
+		for (int index = 0; index < perms.Length; index++) {
+			Debug.Log(perms[index]);
+		}
+	}
+
 	// Use this for initialization
 	void Start () {
         // Assign static instance for ease of access
-        Instance = this;
+		Instance = this;
+
+        // Set up permutations
+        Permute();
 
 		// Set up references to switches
 		m_switches = GameObject.FindObjectsOfType(typeof(Switch)) as Switch[];

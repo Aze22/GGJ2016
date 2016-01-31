@@ -1,0 +1,165 @@
+fileFormatVersion: 2
+guid: 4a767a6df384e4d25924b6007aa7a3e8
+timeCreated: 1454247508
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: back
+    100002: //RootNode
+    100004: Head
+    100006: HeadEnd
+    100008: Hip
+    100010: HipCTRL
+    100012: Left_ArmCTRL1
+    100014: Left_ArmIK
+    100016: Left_Colar
+    100018: Left_Foot
+    100020: Left_Hand
+    100022: Left_HandEnd
+    100024: Left_LegCTRL
+    100026: Left_LegIK
+    100028: Left_LowerArm
+    100030: Left_LowerLeg
+    100032: Left_Toe
+    100034: Left_ToeEnd
+    100036: Left_UpperArm
+    100038: Left_UpperLeg
+    100040: Neck
+    100042: pCube1
+    100044: pCube3
+    100046: Right_ArmCTRL
+    100048: Right_ArmIK
+    100050: Right_Colar
+    100052: Right_Colar1
+    100054: Right_Foot
+    100056: Right_Hand
+    100058: Right_HandEnd
+    100060: Right_LegCTRL
+    100062: Right_LegIK
+    100064: Right_LowerArm
+    100066: Right_LowerLeg
+    100068: Right_Toe
+    100070: Right_ToeEnd
+    100072: Right_UpperArm
+    100074: Right_UpperLeg
+    100076: Spine01
+    100078: Spine02
+    100080: Spine03
+    100082: Spine04
+    100084: SplineCurve
+    100086: SplineIK
+    100088: transform2
+    400000: back
+    400002: //RootNode
+    400004: Head
+    400006: HeadEnd
+    400008: Hip
+    400010: HipCTRL
+    400012: Left_ArmCTRL1
+    400014: Left_ArmIK
+    400016: Left_Colar
+    400018: Left_Foot
+    400020: Left_Hand
+    400022: Left_HandEnd
+    400024: Left_LegCTRL
+    400026: Left_LegIK
+    400028: Left_LowerArm
+    400030: Left_LowerLeg
+    400032: Left_Toe
+    400034: Left_ToeEnd
+    400036: Left_UpperArm
+    400038: Left_UpperLeg
+    400040: Neck
+    400042: pCube1
+    400044: pCube3
+    400046: Right_ArmCTRL
+    400048: Right_ArmIK
+    400050: Right_Colar
+    400052: Right_Colar1
+    400054: Right_Foot
+    400056: Right_Hand
+    400058: Right_HandEnd
+    400060: Right_LegCTRL
+    400062: Right_LegIK
+    400064: Right_LowerArm
+    400066: Right_LowerLeg
+    400068: Right_Toe
+    400070: Right_ToeEnd
+    400072: Right_UpperArm
+    400074: Right_UpperLeg
+    400076: Spine01
+    400078: Spine02
+    400080: Spine03
+    400082: Spine04
+    400084: SplineCurve
+    400086: SplineIK
+    400088: transform2
+    4300000: pCube3
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: pCube3
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
