@@ -4554,6 +4554,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 530658747}
     m_Modifications:
+    - target: {fileID: 11419618, guid: 7c5b6a2dc24f31f44b38a12e67e37505, type: 2}
+      propertyPath: m_waypoints.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 402198, guid: 7c5b6a2dc24f31f44b38a12e67e37505, type: 2}
       propertyPath: m_LocalPosition.x
       value: 8.21
