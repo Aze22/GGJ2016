@@ -10,6 +10,7 @@ public class EnemyScript : MonoBehaviour {
 	private WaypointScript m_currentWaypoint;
 	private int m_currentWaypointIndex = 0;
 	private float m_currentDistanceFromWP = 0f;
+	private Vector3 m_finalMovement;
 	private Vector3 m_directionVector;
 
 	private Transform m_meshT;
@@ -67,7 +68,7 @@ public class EnemyScript : MonoBehaviour {
 		{
 			Vector3 targetDir = (transform.position + m_directionVector) - m_meshT.position;
 			Vector3 newDir = Vector3.RotateTowards(m_meshT.forward, targetDir, Time.deltaTime * 20, 0f);
-			transform.rotation = Quaternion.LookRotation(newDir);
+			m_meshT.transform.rotation = Quaternion.LookRotation(newDir);
 			m_meshT.eulerAngles = new Vector3(0, m_meshT.eulerAngles.y, m_meshT.eulerAngles.z);
 		}
 	}
@@ -86,7 +87,7 @@ public class EnemyScript : MonoBehaviour {
 
 			if(m_currentDistanceFromWP > 0.1f)
 			{
-				Vector3 m_finalMovement = Vector3.zero;
+				m_finalMovement = Vector3.zero;
 				m_finalMovement = ((m_currentWaypoint.transform.position - transform.position).normalized) * Time.deltaTime * m_normalSpeed;
 				GetComponent<CharacterController>().Move(m_finalMovement);
 
