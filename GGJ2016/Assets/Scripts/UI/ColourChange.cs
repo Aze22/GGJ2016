@@ -42,10 +42,11 @@ public class ColourChange : MonoBehaviour {
     void UpdatePosition()
     {
         theta += dx;
-        x = ((float)Screen.width * 0.5f) + (35f * Mathf.Sin(theta));
-        y = 70f + (35f * Mathf.Cos(theta));
-        //rectTransform.position = new Vector3(x, Mathf.Atan(x / 2) + (x * x * x) / 10000, 0);
-        rectTransform.position = new Vector3(x, y, 0f);
+		float xOffset = -227.5f + ((theta * 455f) / (2f * Mathf.PI));
+        x = ((float)Screen.width * 0.5f) + xOffset;
+        //y = 70f + (35f * Mathf.Sin(theta));
+		y = 70f - 22.5f * (Mathf.Atan(xOffset / 35f) - ((xOffset * xOffset * xOffset) / 10000000f));
+		rectTransform.position = new Vector3(x, y, 0);
     }
 
     void Start()
@@ -60,8 +61,6 @@ public class ColourChange : MonoBehaviour {
         rectTransform = GetComponent<RectTransform>() as RectTransform;
         x = rectTransform.position.x;
         y = rectTransform.position.y;
-       //rectTransform.position = new Vector3(x, Mathf.Atan(x / 2) + (x * x * x) / 50, 0);
-
     }
 	
 	// Update is called once per frame

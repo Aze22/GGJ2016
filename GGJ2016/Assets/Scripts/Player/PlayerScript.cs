@@ -19,7 +19,7 @@ public class PlayerScript : MonoBehaviour
     public DoorScript m_nearbyDoor;
 
     // Constants
-    private const float CAMERA_BOX_X = 2f;
+    private const float CAMERA_BOX_X = 5f;
 	private const float CAMERA_BOX_Y = 2f;
 	private const float CAMERA_BOX_Z = 2f;
 

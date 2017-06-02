@@ -97,7 +97,7 @@ public class NPCScript : MonoBehaviour
  				break;
 
  			default:
-				Debug.Log("Unhandled NPC behaviour");
+				Debug.Log("Unhandled NPC behaviour: " + m_behaviour);
  				break;
  		}
 

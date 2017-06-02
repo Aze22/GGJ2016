@@ -7,7 +7,7 @@ using System.Collections.Generic;
 public class MONO_Messenger : MonoBehaviour
 {
     [HideInInspector]
-    public string name = "Notify";
+    new public string name = "Notify";
 
     public GameObject target;
     public string methodName;
